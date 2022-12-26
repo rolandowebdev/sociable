@@ -1,18 +1,20 @@
-/* eslint-disable no-unused-vars */
 import jwtDecode from 'jwt-decode';
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
-import { client } from '../../utils/sanityClient';
 
+import { client } from '../../utils/sanityClient';
 import { shareVideo, logo } from '../../assets';
 
 const Login = () => {
   const user = false;
   const navigate = useNavigate();
 
-  const createOrGetUser = (response) => {
+  const responseGoogle = (response) => {
     // * jwtDecode use for convert JsonWebToken
     const decoded = jwtDecode(response.credential);
+    // TODO: save data into local storage
+    localStorage.setItem('user', JSON.stringify(decoded));
+
     const { name, picture, sub } = decoded;
 
     const doc = {
@@ -22,6 +24,7 @@ const Login = () => {
       image: picture
     };
 
+    // TODO: Make the data user into sanity if data doesn't exist
     client.createIfNotExists(doc).then(() => navigate('/', { replace: true }));
   };
 
@@ -47,7 +50,7 @@ const Login = () => {
             <div>Logged in</div>
           ) : (
             <GoogleLogin
-              onSuccess={(credentialResponse) => createOrGetUser(credentialResponse)}
+              onSuccess={(credentialResponse) => responseGoogle(credentialResponse)}
               onError={() => console.log('Login Failed')}
             />
           )}
