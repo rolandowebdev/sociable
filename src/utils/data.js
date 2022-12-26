@@ -37,19 +37,19 @@ export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
       url
     }
   },
+  _id,
+  destination,
+  postedBy->{
+    _id,
+    username,
+    image
+  },
+  save[]{
+    _key,
+    postedBy->{
       _id,
-      destination,
-      postedBy->{
-        _id,
-        username,
-        image
-      },
-      save[]{
-        _key,
-        postedBy->{
-          _id,
-          username,
-          image
-        },
-      },
-    } `;
+      username,
+      image
+    },
+  },
+} `;

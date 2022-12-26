@@ -1,25 +1,27 @@
+// package
 import { useState, useEffect, useRef } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
+// icons
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-import client from '../../utils/sanityClient';
+// utils
+import { client } from '../../utils/sanityClient';
 import { userQuery } from '../../utils/data';
-
 import { logo } from '../../assets';
 
+// components
 import Pins from '../Pins/Pins';
 import { Sidebar, UserProfile } from '../../components';
+import { fetchUserData } from '../../utils/fetchUserData';
 
 const Home = () => {
   const scrollRef = useRef(null);
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
 
-  const getUser = JSON.parse(localStorage.getItem('user'));
-  // TODO: localStorage() use for : clear for ensure delete user token expired
-  const userInfo = getUser !== 'undefined' ? getUser : localStorage.clear();
+  const userInfo = fetchUserData();
 
   // TODO: fetch data user from local storage
   useEffect(() => {

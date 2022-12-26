@@ -1,8 +1,10 @@
+// package
 import jwtDecode from 'jwt-decode';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
-import client from '../../utils/sanityClient';
+// utils
+import { client } from '../../utils/sanityClient';
 import { shareVideo, logo } from '../../assets';
 
 const Login = () => {
@@ -10,10 +12,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const responseGoogle = (response) => {
-    // * jwtDecode use for convert JsonWebToken
-    const decoded = jwtDecode(response.credential);
-    // TODO: save data into local storage
-    localStorage.setItem('user', JSON.stringify(decoded));
+    const decoded = jwtDecode(response.credential); // jwtDecode use for convert JsonWebToken
+    localStorage.setItem('user', JSON.stringify(decoded)); // save data into local storage
 
     const { name, picture, sub } = decoded;
 
