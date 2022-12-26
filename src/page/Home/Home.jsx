@@ -7,7 +7,8 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { userQuery, client } from '../../utils';
 import { logo } from '../../assets';
 
-import { Pins, Sidebar, UserProfile } from '../../components';
+import Pins from '../Pins/Pins';
+import { Sidebar, UserProfile } from '../../components';
 
 const Home = () => {
   const scrollRef = useRef(null);

@@ -15,7 +15,7 @@ const Sidebar = ({ user, closeToggle }) => {
     if (closeToggle) closeToggle(false);
   };
   return (
-    <div className="flex flex-col justify-between h-full overflow-y-scroll bg-white min-w-210 hide-scrollbar">
+    <div className="flex flex-col justify-between h-full overflow-y-scroll bg-white shadow-lg min-w-210 hide-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
@@ -54,7 +54,7 @@ const Sidebar = ({ user, closeToggle }) => {
           to={`user-profile/${user?._id}`}
           className="flex items-center gap-2 p-2 px-5 py-4 bg-white rounded-lg shadow-lg">
           <img className="w-10 h-10 rounded-full" src={user?.image} alt={user?.username} />
-          <p className="text-sm font-bold text-gray-800 uppercase">{user?.username}</p>
+          <p className="text-sm font-bold text-gray-500 uppercase">{user?.username}</p>
         </Link>
       )}
     </div>
