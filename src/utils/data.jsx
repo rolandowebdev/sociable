@@ -1,7 +1,55 @@
 // TODO: function for send data into sanity
-const userQuery = (userId) => {
+export const userQuery = (userId) => {
   const query = `*[_type == "user" && _id == '${userId}']`;
   return query;
 };
 
-export default userQuery;
+export const searchQuery = (searchTerm) => {
+  const query = `*[_type == "pin" && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*']{
+    image {
+      asset -> {
+        url
+      }
+    },
+    _id,
+    destination,
+    postedBy -> {
+      _id,
+      username,
+      image
+    },
+    save[] {
+      _key,
+      postedBy -> {
+        _id,
+        username,
+        image
+      },
+    },
+  }`;
+
+  return query;
+};
+
+export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
+  image{
+    asset->{
+      url
+    }
+  },
+      _id,
+      destination,
+      postedBy->{
+        _id,
+        username,
+        image
+      },
+      save[]{
+        _key,
+        postedBy->{
+          _id,
+          username,
+          image
+        },
+      },
+    } `;

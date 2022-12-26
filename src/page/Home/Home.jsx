@@ -4,7 +4,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-import { userQuery, client } from '../../utils';
+import client from '../../utils/sanityClient';
+import { userQuery } from '../../utils/data';
+
 import { logo } from '../../assets';
 
 import Pins from '../Pins/Pins';
