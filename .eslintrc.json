@@ -26,6 +26,8 @@
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/media-has-caption": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "react/prop-types": "off"
   }
 }

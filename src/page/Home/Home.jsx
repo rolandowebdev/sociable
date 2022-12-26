@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { useState, useEffect, useRef } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -8,7 +7,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { userQuery, client } from '../../utils';
 import { logo } from '../../assets';
 
-import { Pins, UserProfile } from '../../components';
+import { Pins, Sidebar, UserProfile } from '../../components';
 
 const Home = () => {
   const scrollRef = useRef(null);
@@ -33,8 +32,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen duration-75 ease-out bg-gray-500 md:flex-row transition-height">
-      <div className="flex-initial hidden h-screen md:flex">Sidebar Component</div>
+    <div className="flex flex-col h-screen duration-75 ease-out bg-white md:flex-row transition-height">
+      <div className="flex-initial hidden h-screen md:flex">
+        <Sidebar user={user && user} />
+      </div>
       <div className="flex flex-row md:hidden">
         <div className="flex flex-row items-center justify-between w-full p-2 shadow-md">
           <HiMenu className="cursor-pointer" fontSize={40} onClick={() => setToggleSidebar(true)} />
@@ -42,7 +43,7 @@ const Home = () => {
             <img className="w-28" src={logo} alt="logo" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
-            <img className="w-28" src={user?.image} alt="logo" />
+            <img className="w-28" src={user?.image} alt={user?.username} />
           </Link>
         </div>
         {toggleSidebar && (
@@ -54,7 +55,7 @@ const Home = () => {
                 onClick={() => setToggleSidebar(false)}
               />
             </div>
-            Sidebar Component
+            <Sidebar user={user && user} closeToggle={setToggleSidebar} />
           </div>
         )}
       </div>
