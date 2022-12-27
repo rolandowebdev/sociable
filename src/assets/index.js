@@ -1,5 +1,5 @@
 import shareVideo from './share.mp4';
 import logo from './logo.png';
-import categories from './constants';
+import categoriesPost from './constants';
 
-export { shareVideo, logo, categories };
+export { shareVideo, logo, categoriesPost };

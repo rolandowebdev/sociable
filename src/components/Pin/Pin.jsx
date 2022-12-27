@@ -25,7 +25,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
    * * (!!) <- this mark will return boolean
    */
 
-  console.log(save);
   const alreadySaved = !!save?.filter((item) => item?.postedBy?._id === user?.sub)?.length;
 
   const savePin = (id) => {
@@ -124,7 +123,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           </div>
         )}
       </div>
-      <Link to={`user-profile/${user?._id}`} className="flex items-center gap-2 mt-2">
+      <Link to={`user-profile/${postedBy?._id}`} className="flex items-center gap-2 mt-2">
         <img
           className="object-cover w-6 h-6 rounded-full"
           src={postedBy?.image}

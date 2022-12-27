@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { RiHomeFill } from 'react-icons/ri';
 
-import { logo, categories } from '../../assets';
+import { logo, categoriesPost } from '../../assets';
 
 const linkStatus = {
   isNotActiveStyle:
@@ -36,7 +36,7 @@ const Sidebar = ({ user, closeToggle }) => {
           <h3 className="px-5 mt-2 text-base font-bold text-gray-500 2xl:text-xl">
             Discover categories
           </h3>
-          {categories.slice(0, categories.length - 1).map((category) => (
+          {categoriesPost.slice(0, categoriesPost.length - 1).map((category) => (
             <NavLink
               className={({ isActive }) =>
                 isActive ? linkStatus.isActiveStyle : linkStatus.isNotActiveStyle
