@@ -1,21 +1,13 @@
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-unused-vars */
-// package
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// icons
 import { AiOutlineCloudUpload } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 
-// utils
 import { client } from '../../utils/sanityClient';
-import { categoriesImage } from '../../utils/data';
 
-// components
 import { Spinner } from '..';
-import { categoriesPost } from '../../assets';
+import { categoriesImage } from '../../utils/data';
 
 const CreatePin = ({ user }) => {
   const [title, setTitle] = useState('');
@@ -142,7 +134,7 @@ const CreatePin = ({ user }) => {
           {user && (
             <div className="flex items-center gap-2 my-2 bg-white rounded-lg">
               <img className="w-10 h-10 rounded-full" src={user?.image} alt="user-profile" />
-              <p className="font-bold">{user.username}</p>
+              <p className="font-bold">{user?.username}</p>
             </div>
           )}
           <input
@@ -168,7 +160,7 @@ const CreatePin = ({ user }) => {
                 <option className="bg-white" value="other">
                   Select Category
                 </option>
-                {categoriesPost.map((category) => (
+                {categoriesImage.map((category) => (
                   <option
                     key={category.name}
                     className="text-base text-black capitalize bg-white border-0 outline-none"

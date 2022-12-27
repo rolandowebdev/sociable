@@ -1,9 +1,7 @@
-// package
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { MasonryLayout, Spinner } from '..';
 
-// utils
 import { client } from '../../utils/sanityClient';
 import { feedQuery, searchQuery } from '../../utils/data';
 

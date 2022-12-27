@@ -1,17 +1,13 @@
-// package
 import { useState, useEffect, useRef } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
-// icons
 import { HiMenu } from 'react-icons/hi';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-// utils
 import { client } from '../../utils/sanityClient';
 import { userQuery } from '../../utils/data';
 import { logo } from '../../assets';
 
-// components
 import Pins from '../Pins/Pins';
 import { Sidebar, UserProfile } from '../../components';
 import { fetchUserData } from '../../utils/fetchUserData';

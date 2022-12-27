@@ -1,9 +1,7 @@
-// package
 import jwtDecode from 'jwt-decode';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
-// utils
 import { client } from '../../utils/sanityClient';
 import { shareVideo, logo } from '../../assets';
 

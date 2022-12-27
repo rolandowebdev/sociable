@@ -1,14 +1,11 @@
-// package
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-// icons
 import { MdDownloadForOffline } from 'react-icons/md';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
 
-// utils
 import { urlFor, client } from '../../utils/sanityClient';
 import { fetchUserData } from '../../utils/fetchUserData';
 
@@ -76,7 +73,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   href={`${image?.asset?.url}?dl=`}
                   onClick={(e) => e.stopPropagation()}
                   download>
-                  <MdDownloadForOffline />
+                  <MdDownloadForOffline className="text-sm" />
                 </a>
               </div>
               {/* saved action */}
@@ -99,13 +96,13 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
             <div className="flex items-center justify-between w-full gap-2">
               {destination && (
                 <a
-                  className="flex items-center gap-2 p-2 pl-4 pr-4 text-xs font-bold text-black bg-white rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
+                  className="flex items-center gap-2 p-2 pl-4 pr-4 text-[10px] font-bold text-black bg-white rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                   href={destination}
                   target="_blank"
                   rel="noreferrer"
                   onClick={(e) => e.stopPropagation()}>
-                  <BsFillArrowUpRightCircleFill />
-                  {destination.length > 20 ? destination.slice(8, 20) : destination.slice(8)}
+                  <BsFillArrowUpRightCircleFill className="text-xs" />
+                  {destination.length > 15 ? `${destination?.slice(0, 15)}...` : destination}
                 </a>
               )}
               {postedBy?._id === user.sub && (
@@ -116,7 +113,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                     e.stopPropagation();
                     deletePin(_id);
                   }}>
-                  <AiTwotoneDelete />
+                  <AiTwotoneDelete className="text-xs" />
                 </button>
               )}
             </div>
