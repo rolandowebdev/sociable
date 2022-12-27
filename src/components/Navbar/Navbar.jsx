@@ -14,7 +14,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search..."
-          onFocus={() => navigate('/')}
+          onFocus={() => navigate('/search')}
         />
       </div>
       <div className="flex gap-3">

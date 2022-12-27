@@ -7,7 +7,7 @@ import { MdDelete } from 'react-icons/md';
 import { client } from '../../utils/sanityClient';
 
 import { Spinner } from '..';
-import { categoriesImage } from '../../utils/data';
+import { categories } from '../../utils/data';
 
 const CreatePin = ({ user }) => {
   const [title, setTitle] = useState('');
@@ -160,7 +160,7 @@ const CreatePin = ({ user }) => {
                 <option className="bg-white" value="other">
                   Select Category
                 </option>
-                {categoriesImage.map((category) => (
+                {categories.map((category) => (
                   <option
                     key={category.name}
                     className="text-base text-black capitalize bg-white border-0 outline-none"
