@@ -10,6 +10,7 @@ import { Spinner } from '..';
 import { categories } from '../../utils/data';
 
 const CreatePin = ({ user }) => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [about, setAbout] = useState('');
   const [destination, setDestination] = useState('');
@@ -18,8 +19,6 @@ const CreatePin = ({ user }) => {
   const [category, setCategory] = useState(null);
   const [imageAsset, setImageAsset] = useState(null);
   const [wrongImageType, setWrongImageType] = useState(false);
-
-  const navigate = useNavigate();
 
   // TODO: uploading asset to Sanity
   const uploadImage = (e) => {
@@ -160,12 +159,12 @@ const CreatePin = ({ user }) => {
                 <option className="bg-white" value="other">
                   Select Category
                 </option>
-                {categories.map((category) => (
+                {categories?.map((category) => (
                   <option
-                    key={category.name}
+                    key={category?.name}
                     className="text-base text-black capitalize bg-white border-0 outline-none"
-                    value={category.name}>
-                    {category.name}
+                    value={category?.name}>
+                    {category?.name}
                   </option>
                 ))}
               </select>

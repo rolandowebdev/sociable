@@ -32,10 +32,10 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
         .insert('after', 'save[-1]', [
           {
             _key: uuidv4(),
-            userId: user.sub,
+            userId: user?.sub,
             postedBy: {
               _type: 'postedBy',
-              _ref: user.sub
+              _ref: user?.sub
             }
           }
         ])
@@ -51,6 +51,8 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
       window.location.reload();
     });
   };
+
+  if (!image) return null;
 
   return (
     <div className="m-2">
@@ -102,10 +104,10 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   rel="noreferrer"
                   onClick={(e) => e.stopPropagation()}>
                   <BsFillArrowUpRightCircleFill className="text-xs" />
-                  {destination.length > 15 ? `${destination?.slice(0, 15)}...` : destination}
+                  {destination?.length > 15 ? `${destination?.slice(0, 15)}...` : destination}
                 </a>
               )}
-              {postedBy?._id === user.sub && (
+              {postedBy?._id === user?.sub && (
                 <button
                   className="p-2 text-base font-bold text-black bg-white outline-none opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md"
                   type="button"
