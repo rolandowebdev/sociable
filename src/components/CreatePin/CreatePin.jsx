@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +8,11 @@ import { MdDelete } from 'react-icons/md';
 import { client } from '../../utils/sanityClient';
 
 import { Spinner } from '..';
-import { categories } from '../../utils/data';
+import ChooseCategory from './ChooseCategory';
+import SaveButton from './SaveButton';
+import InputPin from './Input';
+import UploadImage from './UploadImage';
+import UserInput from './UserInput';
 
 const CreatePin = ({ user }) => {
   const navigate = useNavigate();
@@ -90,93 +95,26 @@ const CreatePin = ({ user }) => {
         </p>
       )}
       <div className="flex flex-col items-center justify-center w-full p-3 bg-white lg:flex-row lg:p-5 lg:w-4/5">
-        <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
-          <div className="flex flex-col items-center justify-center w-full p-3 border-2 border-gray-300 border-dotted h-420">
-            {loading && <Spinner />}
-            {wrongImageType && <p>Wrong image type</p>}
-            {!imageAsset ? (
-              <label>
-                <div className="flex flex-col items-center justify-center h-full">
-                  <div className="flex flex-col items-center justify-center">
-                    <p className="text-2xl font-bold">
-                      <AiOutlineCloudUpload />
-                    </p>
-                    <p className="text-lg">Click to upload</p>
-                  </div>
-                  <p className="mt-32 text-gray-400">
-                    Use high-quality JPG, SVG, PNG, GIF less than 20 MB
-                  </p>
-                </div>
-                <input type="file" name="upload-image" onChange={uploadImage} className="w-0 h-0" />
-              </label>
-            ) : (
-              <div className="relative h-full">
-                <img className="w-full h-full" src={imageAsset?.url} alt="uploaded-pic" />
-                <button
-                  type="button"
-                  className="absolute p-3 text-xl transition-all duration-500 ease-in-out bg-white rounded-full outline-none cursor-pointer bottom-3 right-3 hover:shadow-md"
-                  onClick={() => setImageAsset(null)}>
-                  <MdDelete />
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
+        <UploadImage
+          loading={loading}
+          wrongImageType={wrongImageType}
+          imageAsset={imageAsset}
+          uploadImage={uploadImage}
+          setImageAsset={setImageAsset}
+        />
         <div className="flex flex-col flex-1 w-full gap-6 mt-5 lg:pl-5">
-          <input
-            className="p-2 text-2xl font-bold border-b-2 border-gray-200 outline-none sm:text-3xl"
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Add your title here"
-          />
-          {user && (
-            <div className="flex items-center gap-2 my-2 bg-white rounded-lg">
-              <img className="w-10 h-10 rounded-full" src={user?.image} alt="user-profile" />
-              <p className="font-bold">{user?.username}</p>
-            </div>
-          )}
-          <input
-            className="p-2 text-base border-b-2 border-gray-200 outline-none sm:text-lg"
-            type="text"
-            value={about}
-            onChange={(e) => setAbout(e.target.value)}
-            placeholder="What is your pin about"
-          />
-          <input
-            className="p-2 text-base border-b-2 border-gray-200 outline-none sm:text-lg"
-            type="text"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-            placeholder="Add a destination link"
+          <UserInput
+            title={title}
+            about={about}
+            destination={destination}
+            setAbout={setAbout}
+            setDestination={setDestination}
+            setTitle={setTitle}
+            user={user}
           />
           <div className="flex flex-col">
-            <div>
-              <p className="mb-2 text-lg font-semibold sm:text-xl">Choose Pin Category</p>
-              <select
-                className="w-4/5 p-2 text-base border-b-2 border-gray-200 rounded-md outline-none cursor-pointer"
-                onChange={(e) => setCategory(e.target.value)}>
-                <option className="bg-white" value="other">
-                  Select Category
-                </option>
-                {categories?.map((category) => (
-                  <option
-                    key={category?.name}
-                    className="text-base capitalize bg-white border-0 outline-none text-slate-900"
-                    value={category?.name}>
-                    {category?.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="flex items-end justify-end mt-5">
-              <button
-                className="p-2 font-bold text-white bg-red-500 rounded-full outline-none w-28"
-                type="button"
-                onClick={savePin}>
-                Save Pin
-              </button>
-            </div>
+            <ChooseCategory setCategory={setCategory} />
+            <SaveButton savePin={savePin} />
           </div>
         </div>
       </div>
