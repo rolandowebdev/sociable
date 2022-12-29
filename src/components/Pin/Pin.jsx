@@ -71,7 +71,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
               {/* download action */}
               <div className="flex gap-2 mx-1">
                 <a
-                  className="flex items-center justify-center text-left text-black bg-white rounded-full outline-none opacity-75 w-7 h-7 hover:opacity-100 hover:shadow-md"
+                  className="flex items-center justify-center text-left bg-white rounded-full outline-none opacity-75 text-slate-900 w-7 h-7 hover:opacity-100 hover:shadow-md"
                   href={`${image?.asset?.url}?dl=`}
                   onClick={(e) => e.stopPropagation()}
                   download>
@@ -98,7 +98,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
             <div className="flex items-center justify-between w-full gap-2">
               {destination && (
                 <a
-                  className="flex items-center gap-2 p-2 pl-4 pr-4 text-[10px] font-bold text-black bg-white rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
+                  className="flex items-center gap-2 p-2 pl-4 pr-4 text-[10px] font-bold text-slate-900 bg-white rounded-full opacity-70 hover:opacity-100 hover:shadow-md"
                   href={destination}
                   target="_blank"
                   rel="noreferrer"
@@ -109,7 +109,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
               )}
               {postedBy?._id === user?.sub && (
                 <button
-                  className="p-2 text-base font-bold text-black bg-white outline-none opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md"
+                  className="p-2 text-base font-bold bg-white outline-none text-slate-900 opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md"
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();

@@ -6,9 +6,9 @@ import { categories } from '../../utils/data';
 
 const linkStatus = {
   isNotActiveStyle:
-    'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize',
+    'flex items-center px-5 gap-3 text-gray-500 hover:text-slate-900 transition-all duration-200 ease-in-out capitalize',
   isActiveStyle:
-    'flex items-center px-5 gap-3 font-bold border-r-2 border-black transition-all duration-200 ease-in-out capitalize'
+    'flex items-center px-5 gap-3 font-bold border-r-2 border-slate-900 transition-all duration-200 ease-in-out capitalize'
 };
 
 const Sidebar = ({ user, closeToggle }) => {
