@@ -48,7 +48,7 @@ const CommentInput = ({ user, fetchPinDetail }) => {
         className="px-6 py-2 text-base font-semibold text-white bg-red-500 rounded-md outline-none"
         type="button"
         onClick={addComment}>
-        {addingComment ? 'Posting the comment...' : 'Post!'}
+        {addingComment ? 'Posting the comment...' : 'Post'}
       </button>
     </div>
   );
