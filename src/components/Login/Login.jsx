@@ -6,13 +6,12 @@ import { client } from '../../utils/sanityClient';
 import { shareVideo, logo } from '../../assets';
 
 const Login = () => {
-  const user = false;
   const navigate = useNavigate();
+  const user = false;
 
   const responseGoogle = (response) => {
     const decoded = jwtDecode(response.credential); // jwtDecode use for convert JsonWebToken
     localStorage.setItem('user', JSON.stringify(decoded)); // save data into local storage
-
     const { name, picture, sub } = decoded;
 
     const doc = {
@@ -23,7 +22,10 @@ const Login = () => {
     };
 
     // TODO: Make the data user into sanity if data doesn't exist
-    client.createIfNotExists(doc).then(() => navigate('/', { replace: true }));
+    client
+      .createIfNotExists(doc)
+      .then(() => navigate('/', { replace: true }))
+      .catch(console.log("Can't Login"));
   };
 
   return (
