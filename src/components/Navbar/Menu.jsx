@@ -1,17 +1,34 @@
-import { IoMdAdd } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { googleLogout } from '@react-oauth/google';
+
+import { AiOutlineLogout } from 'react-icons/ai';
+import { IoMdCreate } from 'react-icons/io';
 
 const Menu = ({ user }) => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    googleLogout();
+    localStorage.clear();
+    navigate('/login', { replace: true });
+  };
+
   return (
-    <div className="flex gap-3">
-      <Link to={`user-profile/${user?._id}`} className="hidden md:block">
-        <img className="h-12 rounded-lg w-14" src={user?.image} alt={user?.username} />
+    <div className="flex gap-3 w-52">
+      <Link className="flex-1 overflow-hidden rounded-md" to={`user-profile/${user?._id}`}>
+        <img className="h-full" src={user?.image} alt={user?.username} />
       </Link>
       <Link
         to="create-pin"
-        className="flex items-center justify-center w-12 h-12 text-white rounded-lg bg-slate-900 md:w-14 md:h-12">
-        <IoMdAdd />
+        className="flex items-center justify-center flex-1 h-12 text-white border-2 border-red-500 border-solid rounded-md">
+        <IoMdCreate color="red" fontSize={21} />
       </Link>
+      <button
+        className="flex items-center justify-center flex-1 h-12 border-2 border-red-500 border-solid rounded-md"
+        type="button"
+        onClick={logout}>
+        <AiOutlineLogout color="red" fontSize={21} />
+      </button>
     </div>
   );
 };

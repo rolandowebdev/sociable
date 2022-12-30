@@ -45,7 +45,7 @@ const UserProfile = () => {
   const logout = () => {
     googleLogout();
     localStorage.clear();
-    navigate('/login');
+    navigate('/login', { replace: true });
   };
 
   if (!user) return <Spinner message="Loading Profile..." />;
