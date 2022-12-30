@@ -18,7 +18,7 @@ const SavePin = ({ save, user, _id }) => {
         .insert('after', 'save[-1]', [
           {
             _key: uuidv4(),
-            userId: user?.sub,
+            userID: user?.sub,
             postedBy: {
               _type: 'postedBy',
               _ref: user?.sub
