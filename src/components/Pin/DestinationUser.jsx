@@ -9,7 +9,7 @@ const DestinationUser = ({ destination }) => {
       rel="noreferrer"
       onClick={(e) => e.stopPropagation()}>
       <BsFillArrowUpRightCircleFill className="text-xs" />
-      {destination?.length > 15 ? `${destination?.slice(0, 15)}...` : destination}
+      {destination?.length > 15 ? `${destination?.slice(0, 13)}...` : destination}
     </a>
   );
 };

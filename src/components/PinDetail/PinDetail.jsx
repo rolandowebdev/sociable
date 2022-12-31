@@ -37,7 +37,7 @@ const PinDetail = ({ user }) => {
   if (!pinDetail) return <Spinner message="Loading pin..." />;
 
   return (
-    <div className="flex gap-5 p-5">
+    <div className="flex gap-5">
       <PostImage pinDetail={pinDetail} />
       <div className="flex-1">
         <PostHeader pinDetail={pinDetail} />

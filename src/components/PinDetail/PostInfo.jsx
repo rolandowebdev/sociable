@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 
 const PostInfo = ({ pinDetail, user }) => {
-  console.log(user);
   return (
     <div className="flex items-center justify-between mt-6">
       <div>
         <h1 className="text-4xl font-bold break-words ">{pinDetail?.title}</h1>
-        <p className="mt-2">
+        <p>
           {pinDetail?.about?.length > 30
             ? `${pinDetail?.about?.slice(0, 30)}...`
             : pinDetail?.about}

@@ -6,10 +6,10 @@ const Pins = ({ user }) => {
   const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="px-2 md:px-5">
-      <div className="flex items-center px-5">
+      <div className="flex items-center">
         <Navbar user={user && user} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
-      <div className="h-full px-2 md:px-5">
+      <div className="h-full">
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/category/:categoryId" element={<Feed />} />
