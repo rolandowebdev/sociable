@@ -43,7 +43,7 @@ const PinDetail = ({ user }) => {
         <PostHeader pinDetail={pinDetail} />
         <PostInfo pinDetail={pinDetail} user={user} />
         <CommentInput user={user} fetchPinDetail={fetchPinDetail} />
-        <CommentList pinDetail={pinDetail} />
+        <CommentList pinDetail={pinDetail} user={user} />
         <AnotherPins pins={pins} />
       </div>
     </div>
