@@ -37,12 +37,12 @@ const CommentInput = ({ user, fetchPinDetail }) => {
   return (
     <div className="flex flex-wrap items-center gap-3 mt-6">
       <input
-        className="flex-1 p-2 border-2 border-gray-100 rounded-md outline-none focus:border-gray-300"
+        className="flex-1 p-2 bg-gray-100 border-2 border-transparent rounded-md outline-none focus:border-gray-300"
         type="text"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         onClick={addComment}
-        placeholder="Add a comment"
+        placeholder="Add your comment..."
       />
       <button
         className="px-6 py-2 text-base font-semibold text-white bg-red-500 rounded-md outline-none"

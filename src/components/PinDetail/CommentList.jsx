@@ -1,11 +1,10 @@
 import React from 'react';
 
 const CommentList = ({ pinDetail }) => {
+  const commentLength = pinDetail?.comments?.length;
   return (
     <>
-      <h2 className="mt-6 mb-2 font-semibold text-md">
-        {!pinDetail?.comments?.length ? 0 : pinDetail?.comments?.length} Comments
-      </h2>
+      <h2 className="mt-6 mb-2 font-semibold text-md">{commentLength || 0} Comments</h2>
       <div className="mt-3 overflow-y-auto">
         {pinDetail?.comments?.map((comment) => (
           <div key={comment?._key} className="flex items-center gap-2 mb-3 bg-white rounded-lg">
