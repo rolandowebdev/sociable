@@ -42,7 +42,7 @@ const PinDetail = ({ user }) => {
       <PostImage pinDetail={pinDetail} />
       <div className="flex-1">
         <PostHeader pinDetail={pinDetail} />
-        <PostInfo pinDetail={pinDetail} />
+        <PostInfo pinDetail={pinDetail} user={user} />
         <CommentInput user={user} fetchPinDetail={fetchPinDetail} />
         <CommentList pinDetail={pinDetail} />
         <AnotherPins pins={pins} />

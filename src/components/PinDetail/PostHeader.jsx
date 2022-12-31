@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsPinAngleFill } from 'react-icons/bs';
+import { BsLink45Deg } from 'react-icons/bs';
 import { MdDownloadForOffline } from 'react-icons/md';
 
 const PostHeader = ({ pinDetail }) => {
@@ -13,11 +13,11 @@ const PostHeader = ({ pinDetail }) => {
         <MdDownloadForOffline className="text-3xl" />
       </a>
       <a
-        className="flex items-center gap-1 font-semibold duration-150 hover:underline hover:text-sky-600"
+        className="flex items-center gap-[2px] font-semibold duration-150 hover:underline hover:text-sky-600"
         href={pinDetail?.destination}
         target="_blank"
         rel="noreferrer">
-        <BsPinAngleFill />
+        <BsLink45Deg className="text-2xl" />
         {pinDetail?.destination?.length > 20
           ? pinDetail?.destination?.slice(8)
           : pinDetail?.destination}
