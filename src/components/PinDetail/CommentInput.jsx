@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-import { IoMdSend } from 'react-icons/io';
+import { Oval } from 'react-loader-spinner';
 import { client } from '../../utils/sanityClient';
 
 const CommentInput = ({ user, fetchPinDetail }) => {
@@ -46,10 +46,14 @@ const CommentInput = ({ user, fetchPinDetail }) => {
         placeholder="Add your comment..."
       />
       <button
-        className="px-6 py-2 text-base font-semibold text-white bg-red-500 rounded-md outline-none"
+        className="px-6 min-h-[44px] text-base font-semibold text-white bg-red-500 rounded-md outline-none"
         type="button"
         onClick={addComment}>
-        {addingComment ? 'Posting the comment...' : <IoMdSend size={20} className="my-1" />}
+        {!addingComment ? (
+          'Send'
+        ) : (
+          <Oval color="#fff" strokeWidth={5} secondaryColor="#d4d4d4" height={22} width={22} />
+        )}
       </button>
     </div>
   );

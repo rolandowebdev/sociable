@@ -1,13 +1,13 @@
 import { AiOutlineCloudUpload } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import InputPin from './Input';
-import { Spinner } from '..';
+import { Loading } from '..';
 
 const UploadImage = ({ loading, wrongImageType, imageAsset, uploadImage, setImageAsset }) => {
   return (
     <div className="bg-secondaryColor p-3 flex flex-0.7 w-full rounded-md">
       <div className="flex flex-col items-center justify-center w-full p-3 border-2 border-gray-300 border-dotted h-420">
-        {loading && <Spinner />}
+        {loading && <Loading center />}
         {wrongImageType && <p className="font-semibold text-rose-600">Wrong image type!</p>}
         {!imageAsset ? (
           <label>

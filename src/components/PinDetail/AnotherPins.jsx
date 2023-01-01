@@ -1,10 +1,10 @@
-import { MasonryLayout, Spinner } from '..';
+import { MasonryLayout, Loading } from '..';
 
 const AnotherPins = ({ pins }) => {
-  if (!pins) return <Spinner message="Loading more pins" />;
+  if (!pins) return <Loading message="More Pins..." />;
   return (
     <>
-      <h2 className="mt-8 mb-3 text-2xl font-bold text-center">More like this</h2>
+      {pins && <h2 className="mt-8 mb-3 text-2xl font-bold text-center">More like this</h2>}
       <MasonryLayout pins={pins} />
     </>
   );

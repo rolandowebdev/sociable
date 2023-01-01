@@ -6,7 +6,7 @@ import { googleLogout } from '@react-oauth/google';
 import { userQuery, userCreatedPinsQuery, userSavedPinsQuery } from '../../utils/data';
 import { client } from '../../utils/sanityClient';
 
-import { Spinner } from '..';
+import { Loading } from '..';
 import Banner from './Banner';
 import TabBar from './TabBar';
 import PinWrapper from './PinWrapper';
@@ -48,7 +48,7 @@ const UserProfile = () => {
     navigate('/login', { replace: true });
   };
 
-  if (!user) return <Spinner message="Loading Profile..." />;
+  if (!user) return <Loading message="Loading Profile..." />;
 
   return (
     <div className="relative items-center justify-center h-full pb-2">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { MasonryLayout, PinNotFound, Spinner } from '..';
+import { MasonryLayout, PinNotFound, Loading } from '..';
 
 import { client } from '../../utils/sanityClient';
 import { feedQuery, searchQuery } from '../../utils/data';
@@ -33,7 +33,7 @@ const Feed = () => {
     }
   }, [categoryId]);
 
-  if (loading) return <Spinner message="We are adding new ideas to your feed!" />;
+  if (loading) return <Loading center message="Pins Loading..." />;
   if (!pins?.length) return <PinNotFound />;
 
   return pins && <MasonryLayout pins={pins} />;

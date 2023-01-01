@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { client } from '../../utils/sanityClient';
 import { feedQuery, searchQuery } from '../../utils/data';
 
-import { MasonryLayout, PinNotFound, Spinner } from '..';
+import { MasonryLayout, PinNotFound, Loading } from '..';
 
 const Search = ({ searchTerm }) => {
   const [pins, setPins] = useState(null);
@@ -27,7 +27,7 @@ const Search = ({ searchTerm }) => {
 
   return (
     <>
-      {loading && <Spinner message="Searching or Pins..." />}
+      {loading && <Loading message="Searching or Pins..." />}
       {!pins?.length && searchTerm && !loading ? <PinNotFound /> : <MasonryLayout pins={pins} />}
     </>
   );

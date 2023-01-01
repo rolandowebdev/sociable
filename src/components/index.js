@@ -7,6 +7,6 @@ export { default as PinDetail } from './PinDetail/PinDetail';
 export { default as Search } from './Search/Search';
 export { default as CreatePin } from './CreatePin/CreatePin';
 export { default as MasonryLayout } from './MasonryLayout/MasonryLayout';
-export { default as Spinner } from './Spinner/Spinner';
+export { default as Loading } from './Loading/Loading';
 export { default as Pin } from './Pin/Pin';
 export { default as PinNotFound } from './PinNotFound/PinNotFound';

@@ -1,16 +1,10 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AiOutlineCloudUpload } from 'react-icons/ai';
-import { MdDelete } from 'react-icons/md';
-
 import { client } from '../../utils/sanityClient';
 
-import { Spinner } from '..';
 import ChooseCategory from './ChooseCategory';
 import SaveButton from './SaveButton';
-import InputPin from './Input';
 import UploadImage from './UploadImage';
 import UserInput from './UserInput';
 

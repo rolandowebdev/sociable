@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { client } from '../../utils/sanityClient';
 import { pinDetailQuery, pinDetailMorePinQuery } from '../../utils/data';
 
-import { Spinner } from '..';
+import { Loading } from '..';
 import CommentList from './CommentList';
 import AnotherPins from './AnotherPins';
 import CommentInput from './CommentInput';
@@ -34,7 +34,7 @@ const PinDetail = ({ user }) => {
     fetchPinDetail();
   }, [pinId]);
 
-  if (!pinDetail) return <Spinner message="Loading pin..." />;
+  if (!pinDetail) return <Loading center message="Loading pin..." />;
 
   return (
     <div className="flex gap-5">
