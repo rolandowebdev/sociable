@@ -43,9 +43,9 @@ const UserProfile = () => {
 
   // TODO: logout user google account
   const logout = () => {
-    googleLogout();
     localStorage.clear();
-    navigate('/login', { replace: true });
+    googleLogout();
+    navigate('/login');
   };
 
   if (!user) return <Loading message="Loading Profile..." />;

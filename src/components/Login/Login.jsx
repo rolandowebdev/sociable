@@ -22,10 +22,7 @@ const Login = () => {
     };
 
     // TODO: Make the data user into sanity if data doesn't exist
-    client
-      .createIfNotExists(doc)
-      .then(() => navigate('/', { replace: true }))
-      .catch(console.log("Can't Login"));
+    client.createIfNotExists(doc).then(() => navigate('/', { replace: true }));
   };
 
   return (

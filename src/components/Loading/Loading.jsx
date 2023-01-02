@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { ProgressBar } from 'react-loader-spinner';
 
 const Loading = ({ message, center }) => {

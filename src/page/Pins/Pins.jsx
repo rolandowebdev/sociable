@@ -5,7 +5,7 @@ import { Feed, Navbar, PinDetail, Search, CreatePin } from '../../components';
 const Pins = ({ user }) => {
   const [searchTerm, setSearchTerm] = useState('');
   return (
-    <div className="px-2 md:px-5">
+    <div className="px-5 md:px-10">
       <div className="flex items-center">
         <Navbar user={user && user} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>

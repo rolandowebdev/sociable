@@ -8,9 +8,9 @@ const Menu = ({ user }) => {
   const navigate = useNavigate();
 
   const logout = () => {
-    googleLogout();
     localStorage.clear();
-    navigate('/login', { replace: true });
+    googleLogout();
+    navigate('/login');
   };
 
   return (
