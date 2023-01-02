@@ -5,7 +5,7 @@ const InputPin = ({ otherClass = '', type = 'text', value, action, placeholder, 
     <input
       className={`${
         otherClass ||
-        'py-2 text-base placeholder:text-base border-b-[1px] border-gray-200 outline-none sm:text-lg'
+        'py-2 text-base placeholder:text-base border-b-[1px] block border-gray-200 outline-none sm:text-lg'
       }`}
       type={type}
       name={name}

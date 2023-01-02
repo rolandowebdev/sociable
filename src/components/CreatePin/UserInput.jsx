@@ -1,12 +1,24 @@
+import ChooseCategory from './ChooseCategory';
 import InputPin from './Input';
+import SaveButton from './SaveButton';
 
-const UserInput = ({ title, setTitle, user, about, setAbout, destination, setDestination }) => {
+const UserInput = ({
+  user,
+  title,
+  setTitle,
+  about,
+  setAbout,
+  destination,
+  setDestination,
+  savePin,
+  setCategory
+}) => {
   return (
-    <>
+    <div className="flex flex-col flex-1.1 w-full gap-6 mt-5 lg:pl-5">
       {user && (
-        <div className="flex items-center gap-2 my-2 bg-white rounded-lg">
+        <div className="flex items-center gap-2 rounded-lg">
           <img className="w-10 h-10 rounded-full" src={user?.image} alt="user-profile" />
-          <p className="font-bold">{user?.username}</p>
+          <p className="font-semibold capitalize">{user?.username}</p>
         </div>
       )}
       <InputPin
@@ -24,7 +36,9 @@ const UserInput = ({ title, setTitle, user, about, setAbout, destination, setDes
         action={(e) => setDestination(e.target.value)}
         placeholder="Add a destination link"
       />
-    </>
+      <SaveButton savePin={savePin} />
+      <ChooseCategory setCategory={setCategory} />
+    </div>
   );
 };
 

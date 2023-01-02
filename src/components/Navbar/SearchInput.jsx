@@ -4,7 +4,7 @@ import { IoMdSearch } from 'react-icons/io';
 const SearchInput = ({ searchTerm, setSearchTerm }) => {
   const navigate = useNavigate();
   return (
-    <div className="flex items-center justify-start w-full px-2 border-2 border-transparent rounded-md bg-gray-50 focus-within:border-gray-300">
+    <div className="flex items-center justify-start w-full px-2 bg-gray-100 border-2 border-transparent rounded-md focus-within:border-gray-300">
       <IoMdSearch className="ml-1 text-gray-400" fontSize={21} />
       <input
         className="w-full p-2 outline-none bg-inherit"

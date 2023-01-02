@@ -37,7 +37,7 @@ const PinDetail = ({ user }) => {
   if (!pinDetail) return <Loading center message="Loading pin..." />;
 
   return (
-    <div className="flex flex-col gap-5 lg:flex-row">
+    <div className="flex flex-col gap-5 my-3 lg:flex-row">
       <PostImage pinDetail={pinDetail} />
       <div className="flex-1">
         <PostHeader pinDetail={pinDetail} />

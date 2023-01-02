@@ -18,7 +18,7 @@ const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}>
         {/* background */}
-        <img className="w-full rounded-lg" src={urlFor(image).width(250).url()} alt="user-post" />
+        <img className="w-full rounded-md" src={urlFor(image).width(250).url()} alt="user-post" />
         {/* overlay */}
         {postHovered && (
           <div className="absolute top-0 z-50 flex flex-col justify-between w-full h-full p-1 pt-2 pb-2 pr-2">
