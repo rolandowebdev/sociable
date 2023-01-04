@@ -9,7 +9,7 @@ const DeletePin = ({ _id }) => {
   };
   return (
     <button
-      className="p-2 text-base font-bold bg-white outline-none text-slate-900 opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md"
+      className="p-2 text-base font-bold bg-white outline-none text-slate-900 opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md hover:text-red-600"
       type="button"
       onClick={(e) => {
         e.stopPropagation();

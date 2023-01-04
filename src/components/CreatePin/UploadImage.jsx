@@ -42,8 +42,9 @@ const UploadImage = ({ imageAsset, setImageAsset }) => {
 
   if (loading)
     return (
-      <div className="flex items-center justify-center w-full flex-0.8">
-        <ProgressBar borderColor="#00BFFF" />
+      <div className="flex items-center flex-col justify-center w-full flex-0.8">
+        <ProgressBar barColor="#DC2626" borderColor="#EF4444" />
+        <p className="px-2 -mt-5 text-center text-md">Upload image...</p>
       </div>
     );
 

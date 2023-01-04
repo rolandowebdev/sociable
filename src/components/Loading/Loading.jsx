@@ -6,7 +6,7 @@ const Loading = ({ message, center }) => {
       className={`${
         center ? 'justify-center' : 'justify-start'
       } flex flex-col items-center w-full h-[calc(100vh-120px)]`}>
-      <ProgressBar color="#00BFFF" borderColor="#00a6dd" height={70} width={250} />
+      <ProgressBar barColor="#DC2626" borderColor="#EF4444" height={70} width={250} />
       {message && <p className="px-2 -mt-5 text-center text-md">{message}</p>}
     </div>
   );

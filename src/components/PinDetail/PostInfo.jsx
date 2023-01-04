@@ -16,7 +16,7 @@ const PostInfo = ({ pinDetail, user }) => {
         <Link
           to={`/user-profile/${user._id}`}
           className="flex items-center gap-1 bg-white rounded-lg">
-          <p className="text-sm font-semibold capitalize duration-150 hover:underline hover:text-sky-600">
+          <p className="text-sm font-semibold capitalize duration-150 hover:underline hover:text-red-600">
             {pinDetail?.postedBy?.username}
           </p>
         </Link>
