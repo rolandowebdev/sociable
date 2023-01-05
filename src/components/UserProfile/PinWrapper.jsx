@@ -1,16 +1,17 @@
 import MasonryLayout from '../MasonryLayout/MasonryLayout';
 
 const PinWrapper = ({ pins }) => {
+  if (pins?.length === 0) {
+    return (
+      <div className="flex items-center justify-center w-full mt-2 font-bold text-1xl">
+        No Pins Found!
+      </div>
+    );
+  }
   return (
-    <>
-      {pins?.length ? (
-        <div className="px-2">
-          <MasonryLayout pins={pins} />
-        </div>
-      ) : (
-        <p className="text-2xl font-bold text-center text-slate-800">No Pins Found!</p>
-      )}
-    </>
+    <div className="px-2">
+      <MasonryLayout pins={pins} />
+    </div>
   );
 };
 

@@ -68,7 +68,7 @@ const UploadImage = ({ imageAsset, setImageAsset }) => {
             <img className="w-full h-full" src={imageAsset?.url} alt="upload-img" />
             <button
               type="button"
-              className="absolute p-3 text-xl bg-white rounded-full outline-none cursor-pointer bottom-3 right-3 hover:shadow-md"
+              className="absolute p-3 text-xl bg-white rounded-full outline-none cursor-pointer hove bottom-3 right-3 hover:shadow-md hover:text-red-600"
               onClick={() => setImageAsset(null)}>
               <MdDelete />
             </button>

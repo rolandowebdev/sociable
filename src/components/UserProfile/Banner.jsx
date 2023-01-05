@@ -1,6 +1,6 @@
 import { AiOutlineLogout } from 'react-icons/ai';
 
-const Banner = ({ user, userID, logout }) => {
+const Banner = ({ user, userId, logout }) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <img
@@ -15,7 +15,7 @@ const Banner = ({ user, userID, logout }) => {
       />
       <h1 className="mt-3 text-3xl font-bold text-center">{user?.username}</h1>
       <div className="absolute top-0 right-0 z-10 p-2">
-        {userID === user?._id && (
+        {userId === user?._id && (
           <button className="p-2 mx-2 mr-1 bg-white rounded-full" type="button" onClick={logout}>
             <AiOutlineLogout color="red" fontSize={21} />
           </button>

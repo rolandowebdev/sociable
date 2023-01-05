@@ -15,7 +15,7 @@ const CreatePin = ({ user }) => {
   const [category, setCategory] = useState(null);
   const [imageAsset, setImageAsset] = useState(null);
 
-  const savePin = () => {
+  const uploadPin = () => {
     if (title && about && destination && imageAsset?._id && category) {
       const doc = {
         _type: 'pin',
@@ -29,7 +29,7 @@ const CreatePin = ({ user }) => {
             _ref: imageAsset?._id
           }
         },
-        userID: user._id,
+        userId: user._id,
         postedBy: {
           _type: 'postedBy',
           _ref: user._id
@@ -64,7 +64,7 @@ const CreatePin = ({ user }) => {
           setDestination={setDestination}
           setTitle={setTitle}
           user={user}
-          savePin={savePin}
+          uploadPin={uploadPin}
           setCategory={setCategory}
         />
       </div>

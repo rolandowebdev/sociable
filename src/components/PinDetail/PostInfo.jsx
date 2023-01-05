@@ -6,8 +6,8 @@ const PostInfo = ({ pinDetail, user }) => {
       <div>
         <h1 className="text-4xl font-bold break-words ">{pinDetail?.title}</h1>
         <p className="mt-1">
-          {pinDetail?.about?.length > 30
-            ? `${pinDetail?.about?.slice(0, 30)}...`
+          {pinDetail?.about?.length > 28
+            ? `${pinDetail?.about?.slice(0, 28)}...`
             : pinDetail?.about}
         </p>
       </div>
@@ -16,7 +16,7 @@ const PostInfo = ({ pinDetail, user }) => {
         <Link
           to={`/user-profile/${user._id}`}
           className="flex items-center gap-1 bg-white rounded-lg">
-          <p className="text-sm font-semibold capitalize duration-150 hover:underline hover:text-red-600">
+          <p className="text-sm font-semibold capitalize duration-150 w-max hover:underline hover:text-red-600">
             {pinDetail?.postedBy?.username}
           </p>
         </Link>

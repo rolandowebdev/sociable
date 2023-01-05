@@ -48,7 +48,7 @@ const UserProfile = () => {
     navigate('/login');
   };
 
-  if (!user) return <Loading message="Loading Profile..." />;
+  if (!user) return <Loading center message="Loading Profile..." />;
 
   return (
     <div className="relative items-center justify-center h-full pb-2">

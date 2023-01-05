@@ -18,7 +18,7 @@ const SavePin = ({ save, user, _id }) => {
         .insert('after', 'save[-1]', [
           {
             _key: uuidv4(),
-            userID: user?.sub,
+            userId: user?.sub,
             postedBy: {
               _type: 'postedBy',
               _ref: user?.sub
@@ -32,24 +32,24 @@ const SavePin = ({ save, user, _id }) => {
     }
   };
 
+  if (alreadySaved) {
+    return (
+      <button className="text-xs save-btn" type="button">
+        {save?.length} Saved
+      </button>
+    );
+  }
+
   return (
-    <>
-      {alreadySaved ? (
-        <button className="text-xs save-btn" type="button">
-          {save?.length} Saved
-        </button>
-      ) : (
-        <button
-          className="text-xs save-btn"
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            savePin(_id);
-          }}>
-          Save
-        </button>
-      )}
-    </>
+    <button
+      className="text-xs save-btn"
+      type="button"
+      onClick={(e) => {
+        e.stopPropagation();
+        savePin(_id);
+      }}>
+      Save
+    </button>
   );
 };
 

@@ -1,6 +1,6 @@
 import ChooseCategory from './ChooseCategory';
 import InputPin from './Input';
-import SaveButton from './SaveButton';
+import UploadButton from './UploadButton';
 
 const UserInput = ({
   user,
@@ -10,7 +10,7 @@ const UserInput = ({
   setAbout,
   destination,
   setDestination,
-  savePin,
+  uploadPin,
   setCategory
 }) => {
   return (
@@ -36,8 +36,8 @@ const UserInput = ({
         action={(e) => setDestination(e.target.value)}
         placeholder="Add a destination link"
       />
-      <SaveButton savePin={savePin} />
       <ChooseCategory setCategory={setCategory} />
+      <UploadButton uploadPin={uploadPin} />
     </div>
   );
 };

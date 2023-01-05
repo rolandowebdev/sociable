@@ -173,6 +173,9 @@ export const userCreatedPinsQuery = (userId) => {
       }
     },
     _id,
+    title,
+    about,
+    category,
     destination,
     postedBy->{
       _id,
@@ -198,6 +201,9 @@ export const userSavedPinsQuery = (userId) => {
       }
     },
     _id,
+    title,
+    about,
+    category,
     destination,
     postedBy->{
       _id,
