@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { client } from '../../utils/sanityClient';
 
 const SavePin = ({ save, user, _id }) => {
+  const [savingPost, setSavingPost] = useState(false);
   /**
    * How the filter function work's here :
    * userId is -> 1 | array of user -> [2,3,1] -> [1].length -> result : 1.
@@ -12,6 +14,7 @@ const SavePin = ({ save, user, _id }) => {
 
   const savePin = (id) => {
     if (!alreadySaved) {
+      setSavingPost(true);
       client
         .patch(id)
         .setIfMissing({ save: [] })
@@ -28,6 +31,7 @@ const SavePin = ({ save, user, _id }) => {
         .commit() // send data into sanity
         .then(() => {
           window.location.reload();
+          setSavingPost(false);
         });
     }
   };
@@ -48,7 +52,7 @@ const SavePin = ({ save, user, _id }) => {
         e.stopPropagation();
         savePin(_id);
       }}>
-      Save
+      {save?.length} {savingPost ? 'Saving' : 'Save'}
     </button>
   );
 };

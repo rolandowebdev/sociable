@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DestinationUser from './DestinationUser';
 import DeletePin from './DeletePin';
 import DownloadPin from './DownloadPin';
@@ -10,11 +10,12 @@ import { fetchUserData } from '../../utils/fetchUserData';
 
 const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
   const [postHovered, setPostHovered] = useState(false);
+  const navigate = useNavigate();
   const user = fetchUserData(); // fetching all user
   return (
-    <Link className="cursor-zoom-in" to={`pin-detail/${_id}`}>
+    <button type="button" className="cursor-zoom-in" onClick={() => navigate(`/pin-detail/${_id}`)}>
       <div
-        className="relative w-auto overflow-hidden transition-all duration-500 ease-in-out rounded-md cursor-zoom-in hover:shadow-lg"
+        className="relative overflow-hidden transition-all duration-500 ease-in-out rounded-md cursor-zoom-in hover:shadow-lg"
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}>
         {/* background */}
@@ -36,7 +37,7 @@ const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
       <p className="mt-2 mb-[6px] text-sm font-semibold">
         {about?.length > 25 ? `${about?.slice(0, 25)}...` : about}
       </p>
-    </Link>
+    </button>
   );
 };
 
