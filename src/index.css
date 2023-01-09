@@ -15,6 +15,6 @@
     display: none;
   }
   .save-btn {
-    @apply px-3 py-1 font-bold text-white bg-red-600 outline-none hover:bg-red-500 opacity-70 hover:opacity-100 rounded-3xl hover:shadow-md;
+    @apply px-3 py-1 font-bold text-white bg-red-400 outline-none hover:bg-red-500 hover:opacity-100 rounded-3xl hover:shadow-md;
   }
 }

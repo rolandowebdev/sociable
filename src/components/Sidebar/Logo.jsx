@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-import { logo } from '../../assets';
 
 const Logo = ({ handleCloseSidebar }) => {
   return (
     <Link
       to="/"
-      className="flex items-center gap-2 px-5 pt-1 my-6 w-190"
+      className="flex items-center gap-2 px-5 pt-1 mt-6 text-3xl font-extrabold tracking-wide text-transparent uppercase bg-red-500 w-190 bg-clip-text"
       onClick={handleCloseSidebar}>
-      <img src={logo} alt="logo" className="w-full" />
+      Sociable
     </Link>
   );
 };

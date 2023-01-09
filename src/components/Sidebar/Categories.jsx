@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 const Categories = ({ categories, linkStatus, handleCloseSidebar }) => {
   return (
     <>
-      <h3 className="px-5 mt-2 text-base font-bold text-gray-500 2xl:text-xl">
-        Discover categories
+      <h3 className="px-5 mt-2 text-lg font-bold text-slate-900 first:mt-0 2xl:text-xl">
+        Pins categories
       </h3>
       {categories?.slice(0, categories.length - 1).map((category) => (
         <NavLink

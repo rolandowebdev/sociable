@@ -3,7 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../../utils/sanityClient';
-import { shareVideo, logo } from '../../assets';
+import { shareVideo } from '../../assets';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ const Login = () => {
         />
       </div>
       <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center bg-blackOverlay">
-        <div className="p-5">
-          <img src={logo} width="130px" alt="logo" />
+        <div className="p-5 text-3xl font-extrabold tracking-wide text-transparent uppercase bg-red-500 shadow-xl bg-clip-text">
+          Sociable
         </div>
         <div className="shadow-2xl">
           {user ? (

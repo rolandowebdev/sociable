@@ -1,15 +1,17 @@
 import { useState } from 'react';
 
-const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
+const activeBtnStyles = 'bg-red-500 text-white rounded-md outline-none';
 const notActiveBtnStyles =
-  'bg-primary mr-4 text-slate-900 font-bold p-2 rounded-full w-20 outline-none';
+  'bg-primary text-slate-900 rounded-md hover:bg-red-200 outline-none duration-200 hover:text-red-400';
 
 const TabBar = ({ setText }) => {
   const [activeBtn, setActiveBtn] = useState('created');
   return (
-    <div className="text-center mb-7">
+    <div className="flex items-center justify-center gap-2 my-4 font-semibold text-center">
       <button
-        className={`${activeBtn === 'created' ? activeBtnStyles : notActiveBtnStyles}`}
+        className={`py-2 px-3 w-24 ${
+          activeBtn === 'created' ? activeBtnStyles : notActiveBtnStyles
+        }`}
         type="button"
         onClick={(e) => {
           setText(e.target.textContent);
@@ -18,7 +20,9 @@ const TabBar = ({ setText }) => {
         Created
       </button>
       <button
-        className={`${activeBtn === 'saved' ? activeBtnStyles : notActiveBtnStyles}`}
+        className={`py-2  px-3 w-24 ${
+          activeBtn === 'saved' ? activeBtnStyles : notActiveBtnStyles
+        }`}
         type="button"
         onClick={(e) => {
           setText(e.target.textContent);

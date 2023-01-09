@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -6,7 +5,7 @@ import { client } from '../../utils/sanityClient';
 import { userQuery } from '../../utils/data';
 import { fetchUserData } from '../../utils/fetchUserData';
 
-import { Sidebar, UserProfile } from '../../components';
+import { UserProfile } from '../../components';
 
 import MobileSidebar from './MobileSidebar';
 import Pins from '../Pins/Pins';

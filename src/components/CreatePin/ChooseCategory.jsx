@@ -1,4 +1,4 @@
-import { categories } from '../../utils/data';
+import { categories } from '../../utils/categories';
 
 const ChooseCategory = ({ setCategory }) => {
   return (
