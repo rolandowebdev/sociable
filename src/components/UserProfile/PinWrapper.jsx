@@ -9,7 +9,7 @@ const PinWrapper = ({ pins }) => {
     );
   }
   return (
-    <div className="px-2">
+    <div className="px-10">
       <MasonryLayout pins={pins} />
     </div>
   );

@@ -34,7 +34,7 @@ const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
           </div>
         )}
       </div>
-      <p className="mt-2 mb-[6px] text-sm font-semibold">
+      <p className="mt-2 mb-[6px] text-start text-sm font-semibold">
         {about?.length > 25 ? `${about?.slice(0, 25)}...` : about}
       </p>
     </button>
