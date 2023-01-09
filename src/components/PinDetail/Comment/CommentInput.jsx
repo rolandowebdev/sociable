@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import { Oval } from 'react-loader-spinner';
-import { client } from '../../utils/sanityClient';
+import { client } from '../../../utils/sanityClient';
 
 const CommentInput = ({ user, fetchPinDetail }) => {
   const { pinId } = useParams();

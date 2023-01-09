@@ -5,9 +5,9 @@ import { client } from '../../utils/sanityClient';
 import { pinDetailQuery, pinDetailMorePinQuery } from '../../utils/data';
 
 import { Loading } from '..';
-import CommentList from './CommentList';
+import CommentList from './Comment/CommentList';
 import AnotherPins from './AnotherPins';
-import CommentInput from './CommentInput';
+import CommentInput from './Comment/CommentInput';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
 import PostInfo from './PostInfo';
