@@ -3,13 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "airbnb",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "prettier"],
   "overrides": [],
   "parserOptions": {
     "ecmaFeatures": {
@@ -21,7 +15,6 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": "off",
     "arrow-body-style": "off",
     "react/function-component-definition": "off",
     "import/prefer-default-export": "off",
