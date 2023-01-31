@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { client } from '../../utils/sanityClient';
 import { userQuery } from '../../utils/data';
-import { fetchUserData } from '../../utils/fetchUserData';
+import fetchUserData from '../../utils/fetchUserData';
 
 import { UserProfile } from '../../components';
 
@@ -11,7 +11,7 @@ import MobileSidebar from './MobileSidebar';
 import Pins from '../Pins/Pins';
 import DesktopSidebar from './DesktopSidebar';
 
-const Home = () => {
+function Home() {
   const scrollRef = useRef(null);
   const [user, setUser] = useState(null);
 
@@ -42,6 +42,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Home;

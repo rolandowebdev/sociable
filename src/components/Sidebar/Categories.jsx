@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-const Categories = ({ categories, linkStatus, handleCloseSidebar }) => {
+function Categories({ categories, linkStatus, handleCloseSidebar }) {
   return (
     <>
       <h3 className="px-5 mt-2 text-lg font-bold text-slate-900 first:mt-0 2xl:text-xl">
@@ -20,6 +20,6 @@ const Categories = ({ categories, linkStatus, handleCloseSidebar }) => {
       ))}
     </>
   );
-};
+}
 
 export default Categories;

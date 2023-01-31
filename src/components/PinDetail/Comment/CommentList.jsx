@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import Comment from './Comment';
 
-const CommentList = ({ pinDetail: { comments }, user }) => {
+function CommentList({ pinDetail: { comments }, user }) {
   const [showComment, setShowComment] = useState(true);
 
   const commentLength = comments?.length;
@@ -19,15 +19,10 @@ const CommentList = ({ pinDetail: { comments }, user }) => {
           <IoIosArrowDown className={`${!showComment && '-rotate-90'}`} />
         </button>
       </div>
-      {showComment && (
-        <>
-          {comments?.map((comment) => (
-            <Comment key={comment?._key} comment={comment} user={user} />
-          ))}
-        </>
-      )}
+      {showComment &&
+        comments?.map((comment) => <Comment key={comment?._key} comment={comment} user={user} />)}
     </>
   );
-};
+}
 
 export default CommentList;

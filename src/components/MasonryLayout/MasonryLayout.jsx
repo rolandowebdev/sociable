@@ -10,7 +10,7 @@ const breakpointObj = {
   500: 1
 };
 
-const MasonryLayout = ({ pins }) => {
+function MasonryLayout({ pins }) {
   return (
     <Masonry className="flex gap-5 animate-slide-fwd" breakpointCols={breakpointObj}>
       {pins?.map((pin) => (
@@ -18,6 +18,6 @@ const MasonryLayout = ({ pins }) => {
       ))}
     </Masonry>
   );
-};
+}
 
 export default MasonryLayout;

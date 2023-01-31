@@ -1,8 +1,7 @@
-import React from 'react';
 import { BsLink45Deg } from 'react-icons/bs';
 import { MdDownloading } from 'react-icons/md';
 
-const PostHeader = ({ pinDetail: { image, destination } }) => {
+function PostHeader({ pinDetail: { image, destination } }) {
   return (
     <div className="flex items-center justify-between">
       <a
@@ -22,6 +21,6 @@ const PostHeader = ({ pinDetail: { image, destination } }) => {
       </a>
     </div>
   );
-};
+}
 
 export default PostHeader;

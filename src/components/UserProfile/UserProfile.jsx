@@ -11,7 +11,7 @@ import Banner from './Banner';
 import TabBar from './TabBar';
 import PinWrapper from './PinWrapper';
 
-const UserProfile = () => {
+function UserProfile() {
   const navigate = useNavigate();
   const { userId } = useParams();
   const [user, setUser] = useState(null);
@@ -61,6 +61,6 @@ const UserProfile = () => {
       </div>
     </div>
   );
-};
+}
 
 export default UserProfile;

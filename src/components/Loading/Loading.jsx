@@ -1,6 +1,6 @@
 import { ProgressBar } from 'react-loader-spinner';
 
-const Loading = ({ message, center }) => {
+function Loading({ message, center }) {
   return (
     <div
       className={`${
@@ -10,6 +10,6 @@ const Loading = ({ message, center }) => {
       {message && <p className="px-2 -mt-5 text-center text-md">{message}</p>}
     </div>
   );
-};
+}
 
 export default Loading;

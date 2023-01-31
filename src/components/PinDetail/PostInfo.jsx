@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const PostInfo = ({ pinDetail: { title, about, postedBy }, user }) => {
+function PostInfo({ pinDetail: { title, about, postedBy }, user }) {
   return (
     <div className="flex items-center justify-between gap-3 mt-6">
       <div>
@@ -21,6 +21,6 @@ const PostInfo = ({ pinDetail: { title, about, postedBy }, user }) => {
       </div>
     </div>
   );
-};
+}
 
 export default PostInfo;

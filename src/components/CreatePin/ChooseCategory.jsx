@@ -1,6 +1,6 @@
-import { categories } from '../../utils/categories';
+import categories from '../../utils/categories';
 
-const ChooseCategory = ({ setCategory }) => {
+function ChooseCategory({ setCategory }) {
   return (
     <select
       className="py-2 text-base border-b-[1px] font-semibold border-gray-200 rounded-md outline-none cursor-pointer"
@@ -18,6 +18,6 @@ const ChooseCategory = ({ setCategory }) => {
       ))}
     </select>
   );
-};
+}
 
 export default ChooseCategory;

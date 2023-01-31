@@ -12,7 +12,7 @@ import PostHeader from './PostHeader';
 import PostImage from './PostImage';
 import PostInfo from './PostInfo';
 
-const PinDetail = ({ user }) => {
+function PinDetail({ user }) {
   const { pinId } = useParams();
   const [pins, setPins] = useState(null);
   const [pinDetail, setPinDetail] = useState(null);
@@ -48,6 +48,6 @@ const PinDetail = ({ user }) => {
       </div>
     </div>
   );
-};
+}
 
 export default PinDetail;

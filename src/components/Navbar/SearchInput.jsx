@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { IoMdSearch } from 'react-icons/io';
 
-const SearchInput = ({ searchTerm, setSearchTerm }) => {
+function SearchInput({ searchTerm, setSearchTerm }) {
   const navigate = useNavigate();
   return (
     <div className="flex items-center justify-start w-full bg-gray-100 border-2 border-transparent rounded-md focus-within:border-gray-300">
@@ -17,6 +17,6 @@ const SearchInput = ({ searchTerm, setSearchTerm }) => {
       />
     </div>
   );
-};
+}
 
 export default SearchInput;

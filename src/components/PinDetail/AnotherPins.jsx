@@ -1,6 +1,6 @@
 import { Loading, Pin } from '..';
 
-const AnotherPins = ({ pins }) => {
+function AnotherPins({ pins }) {
   if (!pins) return <Loading message="More Pins..." />;
   return (
     <>
@@ -12,6 +12,6 @@ const AnotherPins = ({ pins }) => {
       </div>
     </>
   );
-};
+}
 
 export default AnotherPins;

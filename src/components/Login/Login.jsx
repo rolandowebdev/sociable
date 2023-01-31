@@ -3,9 +3,8 @@ import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../../utils/sanityClient';
-import { shareVideo } from '../../assets';
 
-const Login = () => {
+function Login() {
   const navigate = useNavigate();
   const user = false;
 
@@ -30,7 +29,7 @@ const Login = () => {
       <div className="relative w-full h-full">
         <video
           className="object-cover w-full h-full"
-          src={shareVideo}
+          src="/share.mp4"
           type="video/mp4"
           loop
           controls={false}
@@ -55,6 +54,6 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Login;

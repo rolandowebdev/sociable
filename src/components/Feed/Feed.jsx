@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { MasonryLayout, PinNotFound, Loading } from '..';
 
 import { client } from '../../utils/sanityClient';
 import { feedQuery, searchQuery } from '../../utils/data';
+import { Loading, MasonryLayout, PinNotFound } from '..';
 
-const Feed = () => {
+function Feed() {
   const [pins, setPins] = useState(null);
   const [loading, setLoading] = useState(false);
   const { categoryId } = useParams();
@@ -37,6 +37,6 @@ const Feed = () => {
   if (!pins?.length) return <PinNotFound />;
 
   return pins && <MasonryLayout pins={pins} />;
-};
+}
 
 export default Feed;

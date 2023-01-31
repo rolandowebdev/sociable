@@ -1,7 +1,7 @@
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { client } from '../../utils/sanityClient';
 
-const DeletePin = ({ _id }) => {
+function DeletePin({ _id }) {
   const deletePin = (id) => {
     client.delete(id).then(() => {
       window.location.reload();
@@ -18,6 +18,6 @@ const DeletePin = ({ _id }) => {
       <AiTwotoneDelete className="text-xs" />
     </button>
   );
-};
+}
 
 export default DeletePin;

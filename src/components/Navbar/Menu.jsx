@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BsUpload } from 'react-icons/bs';
 
-const Menu = ({ user }) => {
+function Menu({ user }) {
   return (
     <div className="flex gap-3">
       <Link
@@ -14,6 +14,6 @@ const Menu = ({ user }) => {
       </Link>
     </div>
   );
-};
+}
 
 export default Menu;

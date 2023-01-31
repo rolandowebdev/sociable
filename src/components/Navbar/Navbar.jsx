@@ -1,7 +1,7 @@
 import Menu from './Menu';
 import SearchInput from './SearchInput';
 
-const Navbar = ({ searchTerm, setSearchTerm, user }) => {
+function Navbar({ searchTerm, setSearchTerm, user }) {
   if (!user) return null;
   return (
     <div className="flex w-full gap-3 py-5">
@@ -9,6 +9,6 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
       <Menu user={user} />
     </div>
   );
-};
+}
 
 export default Navbar;

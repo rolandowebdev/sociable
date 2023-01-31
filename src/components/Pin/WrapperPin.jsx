@@ -6,9 +6,9 @@ import DownloadPin from './DownloadPin';
 import SavePin from './SavePin';
 
 import { urlFor } from '../../utils/sanityClient';
-import { fetchUserData } from '../../utils/fetchUserData';
+import fetchUserData from '../../utils/fetchUserData';
 
-const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
+function WrapperPin({ _id, image, save, destination, postedBy, about }) {
   const [postHovered, setPostHovered] = useState(false);
   const navigate = useNavigate();
   const user = fetchUserData(); // fetching all user
@@ -39,6 +39,6 @@ const WrapperPin = ({ _id, image, save, destination, postedBy, about }) => {
       </p>
     </button>
   );
-};
+}
 
 export default WrapperPin;

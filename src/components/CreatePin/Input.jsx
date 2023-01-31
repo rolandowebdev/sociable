@@ -1,6 +1,4 @@
-import React from 'react';
-
-const InputPin = ({ otherClass = '', type = 'text', value, action, placeholder, name }) => {
+function InputPin({ otherClass = '', type = 'text', value, action, placeholder, name }) {
   return (
     <input
       className={`${
@@ -14,6 +12,6 @@ const InputPin = ({ otherClass = '', type = 'text', value, action, placeholder, 
       placeholder={placeholder}
     />
   );
-};
+}
 
 export default InputPin;

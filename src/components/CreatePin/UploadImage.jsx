@@ -6,7 +6,7 @@ import { client } from '../../utils/sanityClient';
 
 import InputPin from './Input';
 
-const UploadImage = ({ imageAsset, setImageAsset }) => {
+function UploadImage({ imageAsset, setImageAsset }) {
   const [wrongImageType, setWrongImageType] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -53,7 +53,7 @@ const UploadImage = ({ imageAsset, setImageAsset }) => {
       <div className="flex flex-col items-center justify-center w-full p-3 border-2 border-gray-300 border-dotted h-420">
         {wrongImageType && <p className="font-semibold text-rose-600">Wrong image type!</p>}
         {!imageAsset ? (
-          <label>
+          <>
             <div className="flex flex-col items-center justify-center h-full">
               <AiOutlineCloudUpload size={35} />
               <p className="mt-1 font-semibold">Click to upload</p>
@@ -62,7 +62,7 @@ const UploadImage = ({ imageAsset, setImageAsset }) => {
               </p>
             </div>
             <InputPin action={uploadImage} type="file" name="upload-image" otherClass="w-0 h-0" />
-          </label>
+          </>
         ) : (
           <div className="relative h-full">
             <img className="w-full h-full" src={imageAsset?.url} alt="upload-img" />
@@ -77,6 +77,6 @@ const UploadImage = ({ imageAsset, setImageAsset }) => {
       </div>
     </div>
   );
-};
+}
 
 export default UploadImage;

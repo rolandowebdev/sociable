@@ -1,7 +1,7 @@
 import { RiHomeFill } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 
-const HomeLink = ({ linkStatus, handleCloseSidebar }) => {
+function HomeLink({ linkStatus, handleCloseSidebar }) {
   return (
     <NavLink
       to="/"
@@ -13,6 +13,6 @@ const HomeLink = ({ linkStatus, handleCloseSidebar }) => {
       Home
     </NavLink>
   );
-};
+}
 
 export default HomeLink;

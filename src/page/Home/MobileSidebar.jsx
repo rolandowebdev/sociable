@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { Sidebar } from '../../components';
 
-const MobileSidebar = ({ user }) => {
+function MobileSidebar({ user }) {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   return (
     <div className="flex flex-row md:hidden">
@@ -34,6 +34,6 @@ const MobileSidebar = ({ user }) => {
       )}
     </div>
   );
-};
+}
 
 export default MobileSidebar;

@@ -1,6 +1,6 @@
 import { AiOutlineLogout } from 'react-icons/ai';
 
-const Banner = ({ user, userId, logout }) => {
+function Banner({ user, userId, logout }) {
   return (
     <div className="flex flex-col items-center justify-center">
       <img
@@ -24,6 +24,6 @@ const Banner = ({ user, userId, logout }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Banner;

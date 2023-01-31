@@ -1,4 +1,4 @@
-import { categories } from '../../utils/categories';
+import categories from '../../utils/categories';
 
 import Categories from './Categories';
 import HomeLink from './HomeLink';
@@ -11,7 +11,7 @@ const linkStatus = {
     'flex items-center px-5 gap-3 font-bold border-r-2 border-red-500 transition-all duration-200 ease-in-out capitalize text-red-500'
 };
 
-const Sidebar = ({ closeToggle }) => {
+function Sidebar({ closeToggle }) {
   const handleCloseSidebar = () => closeToggle && closeToggle(false);
   return (
     <div className="flex flex-col justify-between h-full overflow-y-scroll bg-white shadow-lg min-w-210 hide-scrollbar">
@@ -28,6 +28,6 @@ const Sidebar = ({ closeToggle }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;

@@ -1,6 +1,6 @@
 import MasonryLayout from '../MasonryLayout/MasonryLayout';
 
-const PinWrapper = ({ pins }) => {
+function PinWrapper({ pins }) {
   if (pins?.length === 0) {
     return (
       <div className="flex items-center justify-center w-full mt-2 font-bold text-1xl">
@@ -13,6 +13,6 @@ const PinWrapper = ({ pins }) => {
       <MasonryLayout pins={pins} />
     </div>
   );
-};
+}
 
 export default PinWrapper;

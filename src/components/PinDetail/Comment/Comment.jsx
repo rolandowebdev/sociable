@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs';
 
-const Comment = ({ comment, user }) => {
+function Comment({ comment, user }) {
   const [likeMessage, setLikeMessage] = useState(false);
   return (
     <div className="flex gap-2 mb-5 rounded-lg bg-red last:mb-0">
@@ -35,6 +35,6 @@ const Comment = ({ comment, user }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Comment;

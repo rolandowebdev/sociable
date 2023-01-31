@@ -5,7 +5,7 @@ import { feedQuery, searchQuery } from '../../utils/data';
 
 import { MasonryLayout, PinNotFound, Loading } from '..';
 
-const Search = ({ searchTerm }) => {
+function Search({ searchTerm }) {
   const [pins, setPins] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,6 +31,6 @@ const Search = ({ searchTerm }) => {
       {!pins?.length && searchTerm && !loading ? <PinNotFound /> : <MasonryLayout pins={pins} />}
     </>
   );
-};
+}
 
 export default Search;

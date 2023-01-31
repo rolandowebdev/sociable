@@ -1,4 +1,4 @@
-export const categories = [
+const categories = [
   {
     name: 'cars',
     image: 'https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg'
@@ -36,3 +36,5 @@ export const categories = [
     image: 'https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg'
   }
 ];
+
+export default categories;

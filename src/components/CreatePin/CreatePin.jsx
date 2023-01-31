@@ -6,7 +6,7 @@ import UserInput from './UserInput';
 
 import { client } from '../../utils/sanityClient';
 
-const CreatePin = ({ user }) => {
+function CreatePin({ user }) {
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [about, setAbout] = useState('');
@@ -70,6 +70,6 @@ const CreatePin = ({ user }) => {
       </div>
     </div>
   );
-};
+}
 
 export default CreatePin;

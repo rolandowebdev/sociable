@@ -2,7 +2,7 @@ import ChooseCategory from './ChooseCategory';
 import InputPin from './Input';
 import UploadButton from './UploadButton';
 
-const UserInput = ({
+function UserInput({
   user,
   title,
   setTitle,
@@ -12,7 +12,7 @@ const UserInput = ({
   setDestination,
   uploadPin,
   setCategory
-}) => {
+}) {
   return (
     <div className="flex flex-col flex-1.1 w-full gap-6 mt-5 lg:pl-5">
       {user && (
@@ -40,6 +40,6 @@ const UserInput = ({
       <UploadButton uploadPin={uploadPin} />
     </div>
   );
-};
+}
 
 export default UserInput;

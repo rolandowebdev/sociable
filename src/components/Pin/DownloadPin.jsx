@@ -1,6 +1,6 @@
 import { MdDownloadForOffline } from 'react-icons/md';
 
-const DownloadPin = ({ image }) => {
+function DownloadPin({ image }) {
   return (
     <div className="flex gap-2 mx-1">
       <a
@@ -12,6 +12,6 @@ const DownloadPin = ({ image }) => {
       </a>
     </div>
   );
-};
+}
 
 export default DownloadPin;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Feed, Navbar, PinDetail, Search, CreatePin } from '../../components';
 
-const Pins = ({ user }) => {
+function Pins({ user }) {
   const [searchTerm, setSearchTerm] = useState('');
   return (
     <div className="px-5 md:px-10">
@@ -20,6 +20,6 @@ const Pins = ({ user }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Pins;

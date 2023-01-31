@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Logo = ({ handleCloseSidebar }) => {
+function Logo({ handleCloseSidebar }) {
   return (
     <Link
       to="/"
@@ -9,6 +9,6 @@ const Logo = ({ handleCloseSidebar }) => {
       Sociable
     </Link>
   );
-};
+}
 
 export default Logo;

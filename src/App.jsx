@@ -4,9 +4,9 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { Login } from './components';
 import { Home } from './page';
-import { fetchUserData } from './utils/fetchUserData';
+import fetchUserData from './utils/fetchUserData';
 
-const App = () => {
+function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +22,6 @@ const App = () => {
       </Routes>
     </GoogleOAuthProvider>
   );
-};
+}
 
 export default App;

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { Oval } from 'react-loader-spinner';
 import { client } from '../../../utils/sanityClient';
 
-const CommentInput = ({ user, fetchPinDetail }) => {
+function CommentInput({ user, fetchPinDetail }) {
   const { pinId } = useParams();
   const [comment, setComment] = useState('');
   const [addingComment, setAddingComment] = useState(false);
@@ -57,6 +57,6 @@ const CommentInput = ({ user, fetchPinDetail }) => {
       </button>
     </div>
   );
-};
+}
 
 export default CommentInput;

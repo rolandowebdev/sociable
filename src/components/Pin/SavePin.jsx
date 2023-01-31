@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { client } from '../../utils/sanityClient';
 
-const SavePin = ({ save, user, _id }) => {
+function SavePin({ save, user, _id }) {
   const [savingPost, setSavingPost] = useState(false);
   /**
    * How the filter function work's here :
@@ -55,6 +55,6 @@ const SavePin = ({ save, user, _id }) => {
       {save?.length} {savingPost ? 'Saving' : 'Save'}
     </button>
   );
-};
+}
 
 export default SavePin;

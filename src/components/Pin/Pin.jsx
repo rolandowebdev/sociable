@@ -1,7 +1,7 @@
 import UserPin from './UserPin';
 import WrapperPin from './WrapperPin';
 
-const Pin = ({ pin: { _id, destination, image, postedBy, save, about } }) => {
+function Pin({ pin: { _id, destination, image, postedBy, save, about } }) {
   if (!image) return null;
   return (
     <div className="my-3">
@@ -16,6 +16,6 @@ const Pin = ({ pin: { _id, destination, image, postedBy, save, about } }) => {
       <UserPin postedBy={postedBy} />
     </div>
   );
-};
+}
 
 export default Pin;
