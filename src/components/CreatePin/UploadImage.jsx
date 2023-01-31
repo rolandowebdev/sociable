@@ -53,7 +53,7 @@ function UploadImage({ imageAsset, setImageAsset }) {
       <div className="flex flex-col items-center justify-center w-full p-3 border-2 border-gray-300 border-dotted h-420">
         {wrongImageType && <p className="font-semibold text-rose-600">Wrong image type!</p>}
         {!imageAsset ? (
-          <>
+          <label htmlFor="upload-image">
             <div className="flex flex-col items-center justify-center h-full">
               <AiOutlineCloudUpload size={35} />
               <p className="mt-1 font-semibold">Click to upload</p>
@@ -61,8 +61,8 @@ function UploadImage({ imageAsset, setImageAsset }) {
                 Use high-quality JPG, SVG, PNG, GIF less than 20 MB
               </p>
             </div>
-            <InputPin action={uploadImage} type="file" name="upload-image" otherClass="w-0 h-0" />
-          </>
+            <InputPin action={uploadImage} type="file" id="upload-image" otherClass="w-0 h-0" />
+          </label>
         ) : (
           <div className="relative h-full">
             <img className="w-full h-full" src={imageAsset?.url} alt="upload-img" />

@@ -52,7 +52,7 @@ function SavePin({ save, user, _id }) {
         e.stopPropagation();
         savePin(_id);
       }}>
-      {save?.length} {savingPost ? 'Saving' : 'Save'}
+      {!savingPost && save?.length} {savingPost ? 'Saving...' : 'Save'}
     </button>
   );
 }

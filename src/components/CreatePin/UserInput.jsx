@@ -24,16 +24,19 @@ function UserInput({
       <InputPin
         value={title}
         action={(e) => setTitle(e.target.value)}
+        id="title-pin"
         placeholder="Add your title here"
       />
       <InputPin
         value={about}
         action={(e) => setAbout(e.target.value)}
+        id="desc-pin"
         placeholder="What is your pin about"
       />
       <InputPin
         value={destination}
         action={(e) => setDestination(e.target.value)}
+        id="destination-pin"
         placeholder="Add a destination link"
       />
       <ChooseCategory setCategory={setCategory} />
