@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { HiMenu } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { AiFillCloseCircle } from 'react-icons/ai'
+import { HiMenu } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
+import { Sidebar } from '../../components'
 
-import { Sidebar } from '../../components';
-
-function MobileSidebar({ user }) {
-  const [toggleSidebar, setToggleSidebar] = useState(false);
+const MobileSidebar = ({ user }) => {
+  const [toggleSidebar, setToggleSidebar] = useState(false)
   return (
     <div className="flex flex-row md:hidden">
       <div className="flex flex-row items-center justify-between w-full p-2 shadow-md">
-        <HiMenu className="cursor-pointer" fontSize={40} onClick={() => setToggleSidebar(true)} />
+        <HiMenu
+          className="cursor-pointer"
+          fontSize={40}
+          onClick={() => setToggleSidebar(true)}
+        />
         <Link
           to="/"
           className="text-3xl font-extrabold tracking-wide text-transparent uppercase bg-red-500 bg-clip-text">
@@ -33,7 +36,7 @@ function MobileSidebar({ user }) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default MobileSidebar;
+export default MobileSidebar

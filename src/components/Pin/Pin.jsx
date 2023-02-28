@@ -1,8 +1,10 @@
-import UserPin from './UserPin';
-import WrapperPin from './WrapperPin';
+import { UserPin } from './UserPin'
+import { WrapperPin } from './WrapperPin'
 
-function Pin({ pin: { _id, destination, image, postedBy, save, about } }) {
-  if (!image) return null;
+export const Pin = ({
+  pin: { _id, destination, image, postedBy, save, about },
+}) => {
+  if (!image) return null
   return (
     <div className="my-3">
       <WrapperPin
@@ -15,7 +17,5 @@ function Pin({ pin: { _id, destination, image, postedBy, save, about } }) {
       />
       <UserPin postedBy={postedBy} />
     </div>
-  );
+  )
 }
-
-export default Pin;

@@ -1,18 +1,17 @@
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react'
+import { Oval } from 'react-loader-spinner'
+import { useParams } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+import { client } from '../../../utils/sanityClient'
 
-import { Oval } from 'react-loader-spinner';
-import { client } from '../../../utils/sanityClient';
-
-function CommentInput({ user, fetchPinDetail }) {
-  const { pinId } = useParams();
-  const [comment, setComment] = useState('');
-  const [addingComment, setAddingComment] = useState(false);
+export const CommentInput = ({ user, fetchPinDetail }) => {
+  const { pinId } = useParams()
+  const [comment, setComment] = useState('')
+  const [addingComment, setAddingComment] = useState(false)
 
   const addComment = () => {
     if (comment) {
-      setAddingComment(true);
+      setAddingComment(true)
       client
         .patch(pinId)
         .setIfMissing({ comments: [] })
@@ -22,18 +21,18 @@ function CommentInput({ user, fetchPinDetail }) {
             _key: uuidv4(),
             postedBy: {
               _type: 'postedBy',
-              _ref: user._id
-            }
-          }
+              _ref: user._id,
+            },
+          },
         ])
         .commit()
         .then(() => {
-          fetchPinDetail();
-          setComment('');
-          setAddingComment(false);
-        });
+          fetchPinDetail()
+          setComment('')
+          setAddingComment(false)
+        })
     }
-  };
+  }
 
   return (
     <div className="flex flex-wrap items-center gap-2 mt-6">
@@ -52,11 +51,15 @@ function CommentInput({ user, fetchPinDetail }) {
         {!addingComment ? (
           'Send'
         ) : (
-          <Oval color="#fff" strokeWidth={5} secondaryColor="#d4d4d4" height={22} width={22} />
+          <Oval
+            color="#fff"
+            strokeWidth={5}
+            secondaryColor="#d4d4d4"
+            height={22}
+            width={22}
+          />
         )}
       </button>
     </div>
-  );
+  )
 }
-
-export default CommentInput;

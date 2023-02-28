@@ -1,42 +1,40 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { feedQuery, searchQuery } from '../../utils/data'
+import { client } from '../../utils/sanityClient'
+import { Loading } from '../Loading'
+import { MasonryLayout } from '../MasonryLayout'
+import { PinNotFound } from '../PinNotFound'
 
-import { client } from '../../utils/sanityClient';
-import { feedQuery, searchQuery } from '../../utils/data';
-import { Loading, MasonryLayout, PinNotFound } from '..';
-
-function Feed() {
-  const [pins, setPins] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const { categoryId } = useParams();
+export const Feed = () => {
+  const [pins, setPins] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const { categoryId } = useParams()
 
   useEffect(() => {
-    setLoading(true);
-    // TODO: check whether feed are in a category or not
+    setLoading(true)
     if (categoryId) {
-      const categoryQuery = searchQuery(categoryId);
+      const categoryQuery = searchQuery(categoryId)
       client
         .fetch(categoryQuery)
         .then((data) => {
-          setPins(data);
-          setLoading(false);
+          setPins(data)
+          setLoading(false)
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
     } else {
       client
         .fetch(feedQuery)
         .then((data) => {
-          setPins(data);
-          setLoading(false);
+          setPins(data)
+          setLoading(false)
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
     }
-  }, [categoryId]);
+  }, [categoryId])
 
-  if (loading) return <Loading center message="Pins Loading..." />;
-  if (!pins?.length) return <PinNotFound />;
+  if (loading) return <Loading center message="Pins Loading..." />
+  if (!pins?.length) return <PinNotFound />
 
-  return pins && <MasonryLayout pins={pins} />;
+  return pins && <MasonryLayout pins={pins} />
 }
-
-export default Feed;

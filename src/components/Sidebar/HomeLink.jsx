@@ -1,18 +1,14 @@
-import { RiHomeFill } from 'react-icons/ri';
-import { NavLink } from 'react-router-dom';
+import { RiHomeFill } from 'react-icons/ri'
+import { NavLink } from 'react-router-dom'
 
-function HomeLink({ linkStatus, handleCloseSidebar }) {
-  return (
-    <NavLink
-      to="/"
-      className={({ isActive }) =>
-        isActive ? linkStatus.isActiveStyle : linkStatus.isNotActiveStyle
-      }
-      onClick={handleCloseSidebar}>
-      <RiHomeFill />
-      Home
-    </NavLink>
-  );
-}
-
-export default HomeLink;
+export const HomeLink = ({ linkStatus, handleCloseSidebar }) => (
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive ? linkStatus.isActiveStyle : linkStatus.isNotActiveStyle
+    }
+    onClick={handleCloseSidebar}>
+    <RiHomeFill />
+    Home
+  </NavLink>
+)

@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs'
 
-function Comment({ comment, user }) {
-  const [likeMessage, setLikeMessage] = useState(false);
+export const Comment = ({ comment, user }) => {
+  const [likeMessage, setLikeMessage] = useState(false)
   return (
     <div className="flex gap-2 mb-5 rounded-lg bg-red last:mb-0">
       <img
@@ -13,7 +13,9 @@ function Comment({ comment, user }) {
       />
       <div className="flex flex-col gap-[2px]">
         <div className="flex gap-1 text-sm">
-          <Link to={`/user-profile/${user._id}`} className="mr-1 font-semibold hover:underline">
+          <Link
+            to={`/user-profile/${user._id}`}
+            className="mr-1 font-semibold hover:underline">
             {comment?.postedBy?.username}
           </Link>
           <p>{comment?.comment}</p>
@@ -34,7 +36,5 @@ function Comment({ comment, user }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
-
-export default Comment;

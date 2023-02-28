@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -28,14 +33,18 @@
         "avoidEscape": true
       }
     ],
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
     "jsx-a11y/label-has-associated-control": ["error", { "assert": "either" }],
     "no-underscore-dangle": ["off", { "allowAfterThis": true }],
-    "react/prop-types": ["off"],
-    "react/jsx-uses-react": ["off"],
-    "react/react-in-jsx-scope": ["off"],
-    "react/jsx-props-no-spreading": ["warn"],
-    "no-shadow": ["off"],
-    "no-console": ["off"],
-    "import/no-cycle": ["off"] // delete this after refactor components
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "import/prefer-default-export": "off",
+    "no-shadow": "off",
+    "no-console": "off"
   }
 }

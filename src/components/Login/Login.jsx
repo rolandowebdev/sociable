@@ -1,29 +1,27 @@
-import jwtDecode from 'jwt-decode';
-import { GoogleLogin } from '@react-oauth/google';
-import { useNavigate } from 'react-router-dom';
+import { GoogleLogin } from '@react-oauth/google'
+import jwtDecode from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
+import share from '../../assets/share.mp4'
+import { client } from '../../utils/sanityClient'
 
-import { client } from '../../utils/sanityClient';
-import share from '../../assets/share.mp4';
-
-function Login() {
-  const navigate = useNavigate();
-  const user = false;
+export const Login = () => {
+  const navigate = useNavigate()
+  const user = false
 
   const responseGoogle = (response) => {
-    const decoded = jwtDecode(response.credential); // jwtDecode use for convert JsonWebToken
-    localStorage.setItem('user', JSON.stringify(decoded)); // save data into local storage
-    const { name, picture, sub } = decoded;
+    const decoded = jwtDecode(response.credential)
+    localStorage.setItem('user', JSON.stringify(decoded))
+    const { name, picture, sub } = decoded
 
     const doc = {
       _id: sub,
       _type: 'user',
       username: name,
-      image: picture
-    };
+      image: picture,
+    }
 
-    // TODO: Make the data user into sanity if data doesn't exist
-    client.createIfNotExists(doc).then(() => navigate('/', { replace: true }));
-  };
+    client.createIfNotExists(doc).then(() => navigate('/', { replace: true }))
+  }
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -47,14 +45,14 @@ function Login() {
             <div>Logged in</div>
           ) : (
             <GoogleLogin
-              onSuccess={(credentialResponse) => responseGoogle(credentialResponse)}
+              onSuccess={(credentialResponse) =>
+                responseGoogle(credentialResponse)
+              }
               onError={() => console.log('Login Failed')}
             />
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }
-
-export default Login;

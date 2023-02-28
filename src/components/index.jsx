@@ -1,12 +1,12 @@
-export { default as Login } from './Login/Login';
-export { default as UserProfile } from './UserProfile/UserProfile';
-export { default as Sidebar } from './Sidebar/Sidebar';
-export { default as Navbar } from './Navbar/Navbar';
-export { default as Feed } from './Feed/Feed';
-export { default as PinDetail } from './PinDetail/PinDetail';
-export { default as Search } from './Search/Search';
-export { default as CreatePin } from './CreatePin/CreatePin';
-export { default as MasonryLayout } from './MasonryLayout/MasonryLayout';
-export { default as Loading } from './Loading/Loading';
-export { default as Pin } from './Pin/Pin';
-export { default as PinNotFound } from './PinNotFound/PinNotFound';
+export * from './CreatePin'
+export * from './Feed'
+export * from './Loading'
+export * from './Login'
+export * from './MasonryLayout'
+export * from './Navbar'
+export * from './Pin'
+export * from './PinDetail'
+export * from './PinNotFound'
+export * from './Search'
+export * from './Sidebar'
+export * from './UserProfile'

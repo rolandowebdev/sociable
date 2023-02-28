@@ -1,18 +1,17 @@
-import { useEffect } from 'react';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import { useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Login } from './components'
+import Home from './page/Home/Home'
+import { fetchUserData } from './utils/fetchUserData'
 
-import { Login } from './components';
-import { Home } from './page';
-import fetchUserData from './utils/fetchUserData';
-
-function App() {
-  const navigate = useNavigate();
+export const App = () => {
+  const navigate = useNavigate()
 
   useEffect(() => {
-    const user = fetchUserData();
-    if (!user) navigate('/login', { replace: true });
-  }, []);
+    const user = fetchUserData()
+    if (!user) navigate('/login', { replace: true })
+  }, [])
 
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
@@ -21,7 +20,5 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </GoogleOAuthProvider>
-  );
+  )
 }
-
-export default App;

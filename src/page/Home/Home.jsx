@@ -1,34 +1,29 @@
-import { useState, useEffect, useRef } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { UserProfile } from '../../components'
+import { userQuery } from '../../utils/data'
+import { fetchUserData } from '../../utils/fetchUserData'
+import { client } from '../../utils/sanityClient'
+import Pins from '../Pins/Pins'
+import DesktopSidebar from './DesktopSidebar'
+import MobileSidebar from './MobileSidebar'
 
-import { client } from '../../utils/sanityClient';
-import { userQuery } from '../../utils/data';
-import fetchUserData from '../../utils/fetchUserData';
+const Home = () => {
+  const scrollRef = useRef(null)
+  const [user, setUser] = useState(null)
 
-import { UserProfile } from '../../components';
+  const userInfo = fetchUserData()
 
-import MobileSidebar from './MobileSidebar';
-import Pins from '../Pins/Pins';
-import DesktopSidebar from './DesktopSidebar';
-
-function Home() {
-  const scrollRef = useRef(null);
-  const [user, setUser] = useState(null);
-
-  const userInfo = fetchUserData();
-
-  // TODO: fetch data user from local storage
   useEffect(() => {
-    const query = userQuery(userInfo?.sub);
+    const query = userQuery(userInfo?.sub)
     client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, []);
+      setUser(data[0])
+    })
+  }, [])
 
-  // TODO: makes the scrollRef default to the first time the page renders
   useEffect(() => {
-    scrollRef.current.scrollTo(0, 0);
-  }, []);
+    scrollRef.current.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="flex flex-col h-screen duration-75 ease-out bg-white md:flex-row transition-height">
@@ -41,7 +36,7 @@ function Home() {
         </Routes>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

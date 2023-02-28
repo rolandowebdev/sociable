@@ -1,54 +1,52 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { googleLogout } from '@react-oauth/google'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import {
+  userCreatedPinsQuery,
+  userQuery,
+  userSavedPinsQuery,
+} from '../../utils/data'
+import { client } from '../../utils/sanityClient'
+import { Loading } from '../Loading'
+import { Banner } from './Banner'
+import { PinWrapper } from './PinWrapper'
+import { TabBar } from './TabBar'
 
-import { googleLogout } from '@react-oauth/google';
+export const UserProfile = () => {
+  const navigate = useNavigate()
+  const { userId } = useParams()
+  const [user, setUser] = useState(null)
+  const [pins, setPins] = useState(null)
+  const [text, setText] = useState('Created')
 
-import { userQuery, userCreatedPinsQuery, userSavedPinsQuery } from '../../utils/data';
-import { client } from '../../utils/sanityClient';
-
-import { Loading } from '..';
-import Banner from './Banner';
-import TabBar from './TabBar';
-import PinWrapper from './PinWrapper';
-
-function UserProfile() {
-  const navigate = useNavigate();
-  const { userId } = useParams();
-  const [user, setUser] = useState(null);
-  const [pins, setPins] = useState(null);
-  const [text, setText] = useState('Created');
-
-  // TODO: get user data
   useEffect(() => {
-    const query = userQuery(userId);
+    const query = userQuery(userId)
     client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, [userId]);
+      setUser(data[0])
+    })
+  }, [userId])
 
-  // TODO: get pins from saved or created
   useEffect(() => {
     if (text === 'Created') {
-      const createdPinsQuery = userCreatedPinsQuery(userId);
+      const createdPinsQuery = userCreatedPinsQuery(userId)
       client.fetch(createdPinsQuery).then((data) => {
-        setPins(data);
-      });
+        setPins(data)
+      })
     } else {
-      const savedPinsQuery = userSavedPinsQuery(userId);
+      const savedPinsQuery = userSavedPinsQuery(userId)
       client.fetch(savedPinsQuery).then((data) => {
-        setPins(data);
-      });
+        setPins(data)
+      })
     }
-  }, [text, userId]);
+  }, [text, userId])
 
-  // TODO: logout user google account
   const logout = () => {
-    localStorage.clear();
-    googleLogout();
-    navigate('/login');
-  };
+    localStorage.clear()
+    googleLogout()
+    navigate('/login')
+  }
 
-  if (!user) return <Loading center message="Loading Profile..." />;
+  if (!user) return <Loading center message="Loading Profile..." />
 
   return (
     <div className="relative items-center justify-center h-full pb-2">
@@ -60,7 +58,5 @@ function UserProfile() {
         </div>
       </div>
     </div>
-  );
+  )
 }
-
-export default UserProfile;

@@ -1,19 +1,17 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { client } from '../../utils/sanityClient'
+import { UploadImage } from './UploadImage'
+import { UserInput } from './UserInput'
 
-import UploadImage from './UploadImage';
-import UserInput from './UserInput';
-
-import { client } from '../../utils/sanityClient';
-
-function CreatePin({ user }) {
-  const navigate = useNavigate();
-  const [title, setTitle] = useState('');
-  const [about, setAbout] = useState('');
-  const [destination, setDestination] = useState('');
-  const [fields, setFields] = useState(false);
-  const [category, setCategory] = useState(null);
-  const [imageAsset, setImageAsset] = useState(null);
+export const CreatePin = ({ user }) => {
+  const navigate = useNavigate()
+  const [title, setTitle] = useState('')
+  const [about, setAbout] = useState('')
+  const [destination, setDestination] = useState('')
+  const [fields, setFields] = useState(false)
+  const [category, setCategory] = useState(null)
+  const [imageAsset, setImageAsset] = useState(null)
 
   const uploadPin = () => {
     if (title && about && destination && imageAsset?._id && category) {
@@ -26,26 +24,26 @@ function CreatePin({ user }) {
           _type: 'image',
           asset: {
             _type: 'reference',
-            _ref: imageAsset?._id
-          }
+            _ref: imageAsset?._id,
+          },
         },
         userId: user._id,
         postedBy: {
           _type: 'postedBy',
-          _ref: user._id
+          _ref: user._id,
         },
-        category
-      };
+        category,
+      }
       client.create(doc).then(() => {
-        navigate('/');
-      });
+        navigate('/')
+      })
     } else {
-      setFields(true);
+      setFields(true)
       setTimeout(() => {
-        setFields(false);
-      }, 2000);
+        setFields(false)
+      }, 2000)
     }
-  };
+  }
 
   return (
     <div className="flex flex-col items-center justify-center my-3">
@@ -69,7 +67,5 @@ function CreatePin({ user }) {
         />
       </div>
     </div>
-  );
+  )
 }
-
-export default CreatePin;

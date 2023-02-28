@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { IoIosArrowDown } from 'react-icons/io';
-import Comment from './Comment';
+import { useState } from 'react'
+import { IoIosArrowDown } from 'react-icons/io'
+import { Comment } from './Comment'
 
-function CommentList({ pinDetail: { comments }, user }) {
-  const [showComment, setShowComment] = useState(true);
+export const CommentList = ({ pinDetail: { comments }, user }) => {
+  const [showComment, setShowComment] = useState(true)
 
-  const commentLength = comments?.length;
+  const commentLength = comments?.length
   return (
     <>
       <div className="flex items-center gap-2 mt-6 mb-2 text-lg">
@@ -20,9 +20,9 @@ function CommentList({ pinDetail: { comments }, user }) {
         </button>
       </div>
       {showComment &&
-        comments?.map((comment) => <Comment key={comment?._key} comment={comment} user={user} />)}
+        comments?.map((comment) => (
+          <Comment key={comment?._key} comment={comment} user={user} />
+        ))}
     </>
-  );
+  )
 }
-
-export default CommentList;

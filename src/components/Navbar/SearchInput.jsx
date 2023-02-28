@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-import { IoMdSearch } from 'react-icons/io';
+import { IoMdSearch } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom'
 
-function SearchInput({ searchTerm, setSearchTerm }) {
-  const navigate = useNavigate();
+export const SearchInput = ({ searchTerm, setSearchTerm }) => {
+  const navigate = useNavigate()
   return (
     <div className="flex items-center justify-start w-full bg-gray-100 border-2 border-transparent rounded-md focus-within:border-gray-300">
       <IoMdSearch className="ml-1 text-gray-400" fontSize={21} />
@@ -16,7 +16,5 @@ function SearchInput({ searchTerm, setSearchTerm }) {
         onBlur={() => navigate('/')}
       />
     </div>
-  );
+  )
 }
-
-export default SearchInput;
