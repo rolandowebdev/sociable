@@ -1,5 +1,11 @@
 {
   "name": "sociable",
+  "description": "social media applications",
+  "author": {
+    "name": "Rolando Pranata",
+    "email": "rolandopranata@gmail.com",
+    "url": "https://rolandowebdev.space"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
