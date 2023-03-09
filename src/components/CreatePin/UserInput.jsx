@@ -12,6 +12,7 @@ export const UserInput = ({
   setDestination,
   uploadPin,
   setCategory,
+  fields,
 }) => (
   <div className="flex flex-col flex-1.1 w-full gap-6 mt-5 lg:pl-5">
     {user && (
@@ -43,6 +44,6 @@ export const UserInput = ({
       placeholder="Add a destination link"
     />
     <ChooseCategory setCategory={setCategory} />
-    <UploadButton uploadPin={uploadPin} />
+    <UploadButton uploadPin={uploadPin} fields={fields} />
   </div>
 )

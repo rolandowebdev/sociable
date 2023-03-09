@@ -49,7 +49,7 @@ export const CreatePin = ({ user }) => {
     <div className="flex flex-col items-center justify-center my-3">
       {fields && (
         <p className="mb-5 text-left text-lightPrimary transition-all duration-150 ease-in">
-          Please fill all the fields!
+          Please fill in all fields!
         </p>
       )}
       <div className="flex flex-col w-full gap-5 lg:flex-row">
@@ -64,6 +64,7 @@ export const CreatePin = ({ user }) => {
           user={user}
           uploadPin={uploadPin}
           setCategory={setCategory}
+          fields={fields}
         />
       </div>
     </div>
