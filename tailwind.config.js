@@ -56,6 +56,7 @@ module.exports = {
       },
       backgroundImage: {
         pattern: "url('../public/assets/bg-sociable.svg')",
+        illustration: "url('../public/assets/sociable.webp')",
       },
       keyframes: {
         'slide-in': {

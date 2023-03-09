@@ -25,14 +25,8 @@ export const Login = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="flex-1">
-        <img
-          className="object-cover h-full w-full"
-          src="/assets/sociable.webp"
-          alt="sociable banner"
-        />
-      </div>
-      <div className="flex flex-1 bg-pattern flex-col items-center justify-center">
+      <div className="flex-1 bg-illustration bg-cover hidden lg:block" />
+      <div className="flex flex-1 bg-pattern bg-cover bg-no-repeat flex-col items-center justify-center">
         <div className="text-3xl mb-3 font-extrabold tracking-wide text-white uppercase">
           Sociable
         </div>
