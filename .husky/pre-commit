@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint
+npx lint-staged || (
+    echo '😢❌😢 Failed to commit 😢❌😢
+        Eslint check failed. Running yarn lint:fix for fixing your code🔨'
+    false;
+)
+
+echo '✅✅✅ You win this time... I am committing this now. ✅✅✅'
