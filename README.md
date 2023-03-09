@@ -1,6 +1,6 @@
 # Sociable
 
-[![Sociable Image](public/assets/sociable.png)](https://sociable-beta.netlify.app/)
+[![Sociable Image](public/assets/display.png)](https://sociable-beta.netlify.app/)
 
 ## Developing
 
