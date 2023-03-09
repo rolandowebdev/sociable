@@ -1,8 +1,7 @@
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { Login } from './components'
-import Home from './page/Home/Home'
+import { Home, Login } from './pages'
 import { fetchUserData } from './utils/fetchUserData'
 
 export const App = () => {

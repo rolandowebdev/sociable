@@ -1,7 +1,6 @@
 export * from './CreatePin'
 export * from './Feed'
 export * from './Loading'
-export * from './Login'
 export * from './MasonryLayout'
 export * from './Navbar'
 export * from './Pin'

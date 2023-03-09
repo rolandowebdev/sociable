@@ -4,11 +4,11 @@ import { UserProfile } from '../../components'
 import { userQuery } from '../../utils/data'
 import { fetchUserData } from '../../utils/fetchUserData'
 import { client } from '../../utils/sanityClient'
-import Pins from '../Pins/Pins'
+import { Pins } from '../Pins'
 import DesktopSidebar from './DesktopSidebar'
 import MobileSidebar from './MobileSidebar'
 
-const Home = () => {
+export const Home = () => {
   const scrollRef = useRef(null)
   const [user, setUser] = useState(null)
 
@@ -38,5 +38,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home
