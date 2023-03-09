@@ -5,7 +5,7 @@ import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs'
 export const Comment = ({ comment, user }) => {
   const [likeMessage, setLikeMessage] = useState(false)
   return (
-    <div className="flex gap-2 mb-5 rounded-lg bg-red last:mb-0">
+    <div className="flex gap-2 mb-5 rounded-lg bg-primary last:mb-0">
       <img
         className="w-10 h-10 rounded-full cursor-pointer"
         src={comment?.postedBy?.image}

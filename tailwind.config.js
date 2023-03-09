@@ -39,6 +39,10 @@ module.exports = {
         350: '350px',
         620: '620px',
       },
+      colors: {
+        primary: '#F8034B',
+        lightPrimary: '#ff1f62',
+      },
       textColor: {
         lightGray: '#F1EFEE',
         primary: '#FAFAFA',
@@ -49,6 +53,9 @@ module.exports = {
         mainColor: '#FBF8F9',
         secondaryColor: '#F0F0F0',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
+      },
+      backgroundImage: {
+        pattern: "url('../public/assets/bg-sociable.svg')",
       },
       keyframes: {
         'slide-in': {
@@ -87,4 +94,4 @@ module.exports = {
       pointer: 'pointer',
     },
   },
-};
+}

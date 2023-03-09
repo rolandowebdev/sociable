@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-const activeBtnStyles = 'bg-red-500 text-white rounded-md outline-none'
+const activeBtnStyles =
+  'bg-primary text-white rounded-md borderborder-transparent outline-none'
 const notActiveBtnStyles =
-  'bg-primary text-slate-900 rounded-md hover:bg-red-200 outline-none duration-200 hover:text-red-400'
+  'text-lightPrimary rounded-md hover:bg-lightPrimary outline-none duration-200 hover:text-white border border-lightPrimary'
 
 export const TabBar = ({ setText }) => {
   const [activeBtn, setActiveBtn] = useState('created')

@@ -6,8 +6,8 @@ export const Loading = ({ message, center }) => (
       center ? 'justify-center' : 'justify-start'
     } flex flex-col items-center w-full h-[calc(100vh-120px)]`}>
     <ProgressBar
-      barColor="#DC2626"
-      borderColor="#EF4444"
+      barColor="#F8034B"
+      borderColor="#ff1f62"
       height={70}
       width={250}
     />

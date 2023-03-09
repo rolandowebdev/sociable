@@ -41,7 +41,7 @@ export const UploadImage = ({ imageAsset, setImageAsset }) => {
   if (loading)
     return (
       <div className="flex items-center flex-col justify-center w-full flex-0.8">
-        <ProgressBar barColor="#DC2626" borderColor="#EF4444" />
+        <ProgressBar barColor="#F8034B" borderColor="#ff1f62" />
         <p className="px-2 -mt-5 text-center text-md">Upload image...</p>
       </div>
     )
@@ -77,7 +77,7 @@ export const UploadImage = ({ imageAsset, setImageAsset }) => {
             />
             <button
               type="button"
-              className="absolute p-3 text-xl bg-white rounded-full outline-none cursor-pointer hove bottom-3 right-3 hover:shadow-md hover:text-red-500"
+              className="absolute p-3 text-xl bg-white rounded-full outline-none cursor-pointer hove bottom-3 right-3 hover:shadow-md hover:text-lightPrimary"
               onClick={() => setImageAsset(null)}>
               <MdDelete />
             </button>

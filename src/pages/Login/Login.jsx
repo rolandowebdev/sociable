@@ -1,12 +1,12 @@
 import { GoogleLogin } from '@react-oauth/google'
 import jwtDecode from 'jwt-decode'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import share from '../../assets/share.mp4'
 import { client } from '../../utils/sanityClient'
 
 export const Login = () => {
   const navigate = useNavigate()
-  const user = false
+  const [error, setError] = useState(false)
 
   const responseGoogle = (response) => {
     const decoded = jwtDecode(response.credential)
@@ -24,31 +24,27 @@ export const Login = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="relative w-full h-full">
-        <video
-          className="object-cover w-full h-full"
-          src={share}
-          type="video/mp4"
-          loop
-          controls={false}
-          muted
-          autoPlay
+    <div className="flex h-screen">
+      <div className="flex-1">
+        <img
+          className="object-cover h-full w-full"
+          src="/assets/sociable.webp"
+          alt="sociable banner"
         />
       </div>
-      <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col items-center justify-center bg-blackOverlay">
-        <div className="p-5 text-3xl font-extrabold tracking-wide text-transparent uppercase bg-red-500 shadow-xl bg-clip-text">
+      <div className="flex flex-1 bg-pattern flex-col items-center justify-center">
+        <div className="text-3xl mb-3 font-extrabold tracking-wide text-white uppercase">
           Sociable
         </div>
         <div className="shadow-2xl">
-          {user ? (
-            <div>Logged in</div>
+          {error ? (
+            <p className="text-gray-500 text-lg">Login failed, try again...</p>
           ) : (
             <GoogleLogin
               onSuccess={(credentialResponse) =>
                 responseGoogle(credentialResponse)
               }
-              onError={() => console.log('Login Failed')}
+              onError={() => setError(true)}
             />
           )}
         </div>

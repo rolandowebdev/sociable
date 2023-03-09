@@ -16,7 +16,7 @@ const MobileSidebar = ({ user }) => {
         />
         <Link
           to="/"
-          className="text-3xl font-extrabold tracking-wide text-transparent uppercase bg-red-500 bg-clip-text">
+          className="text-3xl font-extrabold tracking-wide text-transparent uppercase bg-primary bg-clip-text">
           Sociable
         </Link>
         <Link to={`user-profile/${user?._id}`}>

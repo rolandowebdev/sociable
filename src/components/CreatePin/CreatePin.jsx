@@ -48,7 +48,7 @@ export const CreatePin = ({ user }) => {
   return (
     <div className="flex flex-col items-center justify-center my-3">
       {fields && (
-        <p className="mb-5 text-left text-red-500 transition-all duration-150 ease-in">
+        <p className="mb-5 text-left text-lightPrimary transition-all duration-150 ease-in">
           Please fill all the fields!
         </p>
       )}

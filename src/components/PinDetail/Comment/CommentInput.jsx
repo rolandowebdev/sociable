@@ -45,7 +45,7 @@ export const CommentInput = ({ user, fetchPinDetail }) => {
         placeholder="Add your comment..."
       />
       <button
-        className="px-6 min-h-[44px] text-base font-semibold text-white bg-red-500 rounded-md outline-none"
+        className="px-6 min-h-[44px] text-base font-semibold text-white bg-primary hover:bg-lightPrimary duration-200 rounded-md outline-none"
         type="button"
         onClick={addComment}>
         {!addingComment ? (

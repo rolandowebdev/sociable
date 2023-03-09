@@ -7,7 +7,7 @@ const linkStatus = {
   isNotActiveStyle:
     'flex items-center px-5 gap-3 text-gray-500 hover:text-slate-900 hover:font-semibold transition-all duration-200 ease-in-out capitalize',
   isActiveStyle:
-    'flex items-center px-5 gap-3 font-bold border-r-2 border-red-500 transition-all duration-200 ease-in-out capitalize text-red-500',
+    'flex items-center px-5 gap-3 font-bold border-r-2 border-lightPrimary transition-all duration-200 ease-in-out capitalize text-lightPrimary',
 }
 
 export const Sidebar = ({ closeToggle }) => {

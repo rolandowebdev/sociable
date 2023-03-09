@@ -7,7 +7,7 @@ export const Banner = ({ user, userId, logout }) => (
       src="https://source.unsplash.com/1600x900/?nature,photography,technology"
       alt="banner-pic"
     />
-    <div className="-mt-10 border-[4px] rounded-full shadow-2xl border-red-400 h-30 aspect-square">
+    <div className="-mt-10 border-[4px] rounded-full shadow-2xl border-lightPrimary h-30 aspect-square">
       <img
         className="object-cover m-[5px] rounded-full"
         src={user?.image}
@@ -18,7 +18,7 @@ export const Banner = ({ user, userId, logout }) => (
     <div className="absolute z-10 p-2 top-1 right-2">
       {userId === user?._id && (
         <button
-          className="p-2 text-red-500 duration-200 bg-white rounded-full hover:shadow-md hover:bg-red-500 hover:text-white"
+          className="p-2 text-lightPrimary duration-200 bg-white rounded-full hover:shadow-md hover:bg-primary hover:text-white"
           type="button"
           onClick={logout}>
           <AiOutlineLogout fontSize={21} />
